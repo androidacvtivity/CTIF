@@ -8,21 +8,7 @@
                 }
             });
 
-            jQuery('input[type=checkbox]').change(function () {
-                var state = jQuery(this).is(':checked');
-                var group = jQuery(this).attr('name');
-                var pos = group.indexOf('_flag');
-                var res = group.substr(0, pos !== false ? pos : 0);
-
-                var lengthChecs = null
-                jQuery('input[type=checkbox]').each(function () {
-                    if (jQuery(this).attr('name').indexOf(res) !== -1) {
-                        jQuery(this).removeAttr('checked');
-                        lengthChecs++;
-                    }
-                });
-                jQuery(this).prop('checked', state);
-            });
+      
         }
     };
 
