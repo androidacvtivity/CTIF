@@ -34,7 +34,7 @@
         var r1103 = toFloat(values.dec_table1_row_r1103c1);
 
 
-        if (r1101 > 0 && r1102 <= 0) {
+        if (r1101 > 0 && r1102 > 0) {
             webform.errors.push({
                 'fieldName': 'dec_table1_row_r1101c1',
                 'index': 0,
