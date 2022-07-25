@@ -10,6 +10,19 @@
         FROM
 
 ( 
+
+SELECT 
+      L.CONTROL,
+      L.FORMULA,
+      L.SQL_TEXT,
+      L.PRIORITATEA,
+      L.STATUT
+      
+      
+        
+        FROM
+
+( 
 SELECT 
       B.CONTROL,
       B.FORMULA,
@@ -29,7 +42,7 @@ SELECT
         
          WHERE
          1=1
-         AND A.FORM  = 61
+         AND A.FORM  = 45
          
          AND A.CONTROL_VERS <=:pPERIOADA 
                
@@ -44,7 +57,7 @@ SELECT
         
          WHERE
          1=1
-         AND B.FORM  = 61
+         AND B.FORM  = 45
          AND B.STATUT <> '3'
          
         
@@ -54,3 +67,15 @@ SELECT
          
          ORDER BY 
           B.CONTROL ) L
+          
+--          WHERE 
+--          1=1
+--          AND L.FORMULA LIKE '%=%'
+          ) L
+          
+--            WHERE 
+--         1=1  
+--          
+--         AND  L.FORMULA  NOT LIKE '%>=%'
+--          AND 
+--          L.FORMULA  NOT LIKE '%=>%'
