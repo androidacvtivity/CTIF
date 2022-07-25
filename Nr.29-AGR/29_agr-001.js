@@ -15,14 +15,14 @@
     webform.validators.agr29 = function (v, allowOverpass) {
         var values = Drupal.settings.mywebform.values;
 
-        var r1101 = toFloat(values.dec_table1_row_r1101c1);
-        var r1102 = toFloat(values.dec_table1_row_r1102c1);
-        var r1103 = toFloat(values.dec_table1_row_r1103c1);
+        var r1101 = toFloat(values.CAP1_R1101_C1);
+        var r1102 = toFloat(values.CAP1_R1102_C1);
+       
 
 
         if (r1101 > 0 && r1102 > 0) {
             webform.errors.push({
-                'fieldName': 'dec_table1_row_r1101c1',
+                'fieldName': 'CAP1_R1101_C1',
                 'index': 0,
                 'msg': Drupal.t('Cod eroare: 02-003. Daca Rind.100>0, atunci Rind.110>0')
             });
