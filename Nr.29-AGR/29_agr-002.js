@@ -28,6 +28,17 @@
             }
         }
 
+        for (var i = 1; i <= 4; i++) {
+            var R1218_C1 = Number(values["CAP1_R1218_C" + i]);
+            var R1219_C1 = Number(values["CAP1_R1219_C" + i]);
+            if (R1218_C1 < R1219_C1 && R1218_C1 != 0 && R1219_C1 != 0) {
+                webform.errors.push({
+                    'fieldName': 'CAP1_R1218_C' + i,
+                    'weight': 1,
+                    'msg': Drupal.t('Cod eroare: 45-009 Rind.(1218)>=Rind.(1219)  pe coloana.@col', { '@col': i })
+                });
+            }
+        }
 
 
 
