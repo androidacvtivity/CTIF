@@ -103,7 +103,12 @@
         var R1329_C3 = Number(values.CAP1_R1329_C3);
         var R1701_C2 = Number(values.CAP1A_R1701_C2);
         var R1330_C5 = Number(values.CAP1_R1330_C5);
-        var R1302_C5 = Number(values.CAP1_R1302_C5);
+
+        var R1117_C3 = Number(values.CAP1_R1117_C3);
+        var R1117_C4 = Number(values.CAP1_R1117_C4);
+
+        var R1119_C3 = Number(values.CAP1_R1119_C3);
+        var R1119_C4 = Number(values.CAP1_R1119_C4);
 
 
 
@@ -152,6 +157,23 @@
             });
         }
 
+
+
+        if (R1117_C3 != R1117_C4 ) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1117_C3',
+                'weight': 6,
+                'msg': Drupal.t('Cod eroare: 45-018. Rind.(1117) COL3=Rind.(1117) COL4 ')
+            });
+        }
+
+        if (R1119_C3 != R1119_C4 ) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1119_C3',
+                'weight': 7,
+                'msg': Drupal.t('Cod eroare: 45-018. Rind.(1119) COL3=Rind.(1119) COL4 ')
+            });
+        }
 
 
         webform.validatorsStatus.agr29 = 1;
