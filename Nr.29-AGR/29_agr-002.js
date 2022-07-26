@@ -15,21 +15,23 @@
     webform.validators.agr29 = function (v, allowOverpass) {
         var values = Drupal.settings.mywebform.values;
 
-        var r1135 = toFloat(values.CAP1_R1135_C1);
-        var r1136 = toFloat(values.CAP1_R1136_C1);
-       
+      
+    for (var i = 1; i <= 5; i++) {
+            var R1135_C1 = Number(values["CAP1_R1135_C" + i]);
+            var R1136_C1 = Number(values["CAP1_R1136_C" + i]);
+            if (R1135_C1 < R1136_C1 && R1135_C1 != 0 && R1136_C1 != 0) {
+                webform.errors.push({
+                    'fieldName': 'CAP1_R1135_C' + i,
+                    'weight': 1,
+                    'msg': Drupal.t('Cod eroare: 45-007 Rind.(1135)>=Rind.(1136) pe coloana.@col', { '@col': i })
+                });
+            }
+        }
 
 
-        if (r1135 < r1136 ) {
-            webform.errors.push({
-                'fieldName': 'CAP1_R1135_C1',
-                'index': 0,
-                'msg': Drupal.t('Cod eroare: 02-003. Daca Rind.100>0, atunci Rind.110>0')
-            });
-        } 
-        
-        
-   
+
+
+
         webform.validatorsStatus.agr29 = 1;
         validateWebform();
     };
