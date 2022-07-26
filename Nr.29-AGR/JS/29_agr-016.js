@@ -163,7 +163,7 @@
             webform.errors.push({
                 'fieldName': 'CAP1_R1117_C3',
                 'weight': 6,
-                'msg': Drupal.t('Cod eroare: 45-018. Rind.(1117) COL3=Rind.(1117) COL4 ')
+                'msg': Drupal.t('Cod eroare: 45-005. Rind.(1117) COL3=Rind.(1117) COL4 ')
             });
         }
 
@@ -171,7 +171,7 @@
             webform.errors.push({
                 'fieldName': 'CAP1_R1119_C3',
                 'weight': 7,
-                'msg': Drupal.t('Cod eroare: 45-018. Rind.(1119) COL3=Rind.(1119) COL4 ')
+                'msg': Drupal.t('Cod eroare: 45-005. Rind.(1119) COL3=Rind.(1119) COL4 ')
             });
         }
 
