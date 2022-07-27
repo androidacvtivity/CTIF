@@ -122,11 +122,11 @@
 
 
 
-        if (R1411_C1 < (R1440_C1 - R1442_C1)) {
+        if (R1411_C1 < (R1412_C2 + R1413_C2 + R1414_C2 + R1415_C2)) {
             webform.errors.push({
-                'fieldName': 'CAP1_R1631_C1',
-                'weight': 8,
-                'msg': Drupal.t('Cod eroare: 45-039. Rind.1631 col.1 >= rind.1440 - rind.1442 col.1')
+                'fieldName': 'CAP1_R1411_C1',
+                'weight': 9,
+                'msg': Drupal.t('Cod eroare: 45-019. Rind.(1411) COL1>=Rind.(1412+1413+1414+1415) pe COL2')
             });
         }
 
