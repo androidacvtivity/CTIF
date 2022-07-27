@@ -114,11 +114,11 @@
         var R1440_C1 = Number(values.CAP1_R1440_C1);
         var R1442_C1 = Number(values.CAP1_R1442_C1);
 
-        if (R1631_C1 != (R1440_C1 - R1442_C1) ) {
+        if (R1631_C1 < (R1440_C1 - R1442_C1) ) {
             webform.errors.push({
                 'fieldName': 'CAP1_R1631_C1',
                 'weight': 8,
-                'msg': Drupal.t('Cod eroare: 45-042. Rind.(1242) COL3 >= Rind.(1242) COL4')
+                'msg': Drupal.t('Cod eroare: 45-039. Rind.1631 col.1 >= rind.1440 - rind.1442 col.1')
             });
         }
 
