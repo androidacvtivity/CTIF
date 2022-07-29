@@ -1116,6 +1116,90 @@
             }
         }
 
+
+
+        for (var i = 0; i < 9; i++) {
+            {
+                var col1 = Number(values["CAP1_R11" + (i < 9 ? ('1' + i) : i) + "_C3"]);
+                var col2 = Number(values["CAP1_R11" + (i < 9 ? ('1' + i) : i) + "_C4"]);
+
+                if (col1 > 0 && col2 <= 0) {
+                    webform.errors.push({
+                        'fieldName': 'CAP1_R11' + (i < 9 ? ('1' + i) : i) + '_C3',
+                        'weight': 12,
+                        'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
+                    });
+                }
+            }
+        }
+
+
+        for (var i = 0; i < 9; i++) {
+            {
+                var col1 = Number(values["CAP1_R11" + (i < 9 ? ('2' + i) : i) + "_C3"]);
+                var col2 = Number(values["CAP1_R11" + (i < 9 ? ('2' + i) : i) + "_C4"]);
+
+                if (col1 > 0 && col2 <= 0) {
+                    webform.errors.push({
+                        'fieldName': 'CAP1_R11' + (i < 9 ? ('2' + i) : i) + '_C3',
+                        'weight': 12,
+                        'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
+                    });
+                }
+            }
+        }
+
+
+        for (var i = 3; i < 7; i++) {
+            {
+                var col1 = Number(values["CAP1_R11" + (i < 7 ? ('3' + i) : i) + "_C3"]);
+                var col2 = Number(values["CAP1_R11" + (i < 7 ? ('3' + i) : i) + "_C4"]);
+
+                if (col1 > 0 && col2 <= 0) {
+                    webform.errors.push({
+                        'fieldName': 'CAP1_R11' + (i < 7 ? ('3' + i) : i) + '_C3',
+                        'weight': 12,
+                        'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
+                    });
+                }
+            }
+        }
+
+
+        for (var i = 0; i < 1; i++) {
+            {
+                var col1 = Number(values["CAP1_R11" + (i < 1 ? ('4' + i) : i) + "_C3"]);
+                var col2 = Number(values["CAP1_R11" + (i < 1 ? ('4' + i) : i) + "_C4"]);
+
+                if (col1 > 0 && col2 <= 0) {
+                    webform.errors.push({
+                        'fieldName': 'CAP1_R11' + (i < 1 ? ('4' + i) : i) + '_C3',
+                        'weight': 12,
+                        'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
+                    });
+                }
+            }
+        }
+
+
+
+
+        for (var i = 3; i <= 9; i++) {
+            {
+                var col1 = Number(values["CAP1_R12" + (i <= 9 ? ('1' + i) : i) + "_C3"]);
+                var col2 = Number(values["CAP1_R12" + (i <= 9 ? ('1' + i) : i) + "_C4"]);
+
+                if (col1 > 0 && col2 <= 0) {
+                    webform.errors.push({
+                        'fieldName': 'CAP1_R12' + (i <= 9 ? ('1' + i) : i) + '_C3',
+                        'weight': 12,
+                        'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
+                    });
+                }
+            }
+        }
+
+
  // End 45-045
 //---------------------------------------------------------
 
