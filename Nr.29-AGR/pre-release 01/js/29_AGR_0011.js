@@ -1082,7 +1082,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
             if ((col1 > 0 && col2 == 0) || (col1 == 0 && col2 > 0)) {
                 webform.errors.push({
-                    'fieldName': 'CAP2_R22' + (i <= 9 ? ('0' + i) : i) + '_C4',
+                    'fieldName': 'CAP2_R22' + (i <= 9 ? ('0' + i) : i) + '_C2',
                     'weight': 65,
                     'msg': Drupal.t('Cod eroare: 45-035 Cap.II daca COL2 = 0 atunci COL4 = 0 ')
                 });

@@ -1028,7 +1028,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
             var col1 = Number(values["CAP2_R21" + (i <= 4 ? ('0' + i) : i) + "_C2"]);
             var col2 = Number(values["CAP2_R21" + (i <= 4 ? ('0' + i) : i) + "_C4"]);
 
-            if ((col1 > 0 && col2 == 0) || (col1 == 0 && col2 > 0)) {
+            if ((col1 == 0 && col2 != 0) ) {
                 webform.errors.push({
                     'fieldName': 'CAP2_R21' + (i <= 4 ? ('0' + i) : i) + '_C2',
                     'weight': 62,
@@ -1044,7 +1044,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
             var col1 = Number(values["CAP2_R21" + (i <= 6 ? ('1' + i) : i) + "_C2"]);
             var col2 = Number(values["CAP2_R21" + (i <= 6 ? ('1' + i) : i) + "_C4"]);
 
-            if ((col1 > 0 && col2 == 0) || (col1 == 0 && col2 > 0)) {
+            if ((col1 == 0 && col2 != 0) ) {
                 webform.errors.push({
                     'fieldName': 'CAP2_R21' + (i <= 6 ? ('1' + i) : i) + '_C2',
                     'weight': 63,
@@ -1061,7 +1061,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
             var col1 = Number(values["CAP2_R21" + (i <= 1 ? ('2' + i) : i) + "_C2"]);
             var col2 = Number(values["CAP2_R21" + (i <= 1 ? ('2' + i) : i) + "_C4"]);
 
-            if ((col1 > 0 && col2 == 0) || (col1 == 0 && col2 > 0)) {
+            if ((col1 == 0 && col2 != 0) ) {
                 webform.errors.push({
                     'fieldName': 'CAP2_R21' + (i <= 1 ? ('2' + i) : i) + '_C2',
                     'weight': 64,
@@ -1080,9 +1080,9 @@ webform.validators.agr29 = function (v, allowOverpass) {
             var col1 = Number(values["CAP2_R22" + (i <= 9 ? ('0' + i) : i) + "_C2"]);
             var col2 = Number(values["CAP2_R22" + (i <= 9 ? ('0' + i) : i) + "_C4"]);
 
-            if ((col1 > 0 && col2 == 0) || (col1 == 0 && col2 > 0)) {
+            if ((col1 == 0 && col2 != 0) ) {
                 webform.errors.push({
-                    'fieldName': 'CAP2_R22' + (i <= 9 ? ('0' + i) : i) + '_C4',
+                    'fieldName': 'CAP2_R22' + (i <= 9 ? ('0' + i) : i) + '_C2',
                     'weight': 65,
                     'msg': Drupal.t('Cod eroare: 45-035 Cap.II daca COL2 = 0 atunci COL4 = 0 ')
                 });
@@ -1098,7 +1098,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
             var col1 = Number(values["CAP2_R23" + (i <= 2 ? ('0' + i) : i) + "_C2"]);
             var col2 = Number(values["CAP2_R23" + (i <= 2 ? ('0' + i) : i) + "_C4"]);
 
-            if ((col1 > 0 && col2 == 0) || (col1 == 0 && col2 > 0)) {
+            if ((col1 == 0 && col2 != 0) ) {
                 webform.errors.push({
                     'fieldName': 'CAP2_R23' + (i <= 2 ? ('0' + i) : i) + '_C2',
                     'weight': 66,
