@@ -111,6 +111,12 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
+
+
+
+
+
+
     var R1242_C3 = Number(values.CAP1_R1242_C3);
     var R1242_C4 = Number(values.CAP1_R1242_C4);
     var R1243_C1 = Number(values.CAP1_R1243_C1);
@@ -1254,6 +1260,31 @@ webform.validators.agr29 = function (v, allowOverpass) {
  // End 45-045
 //---------------------------------------------------------
 
+    //Start 45-015 
+
+    var R1328_C1 = Number(values.CAP1_R1328_C1);
+    var R1301_C1 = toFloat(values.CAP1_R1301_C1);
+    var R1302_C1 = toFloat(values.CAP1_R1302_C1);
+    var R1320_C1 = Number(values.CAP1_R1320_C1);
+    var R1321_C1 = Number(values.CAP1_R1321_C1);
+    var R1322_C1 = Number(values.CAP1_R1322_C1);
+    var R1323_C1 = Number(values.CAP1_R1323_C1);
+    var R1324_C1 = Number(values.CAP1_R1324_C1);
+    var R1327_C1 = Number(values.CAP1_R1327_C1);
+    var sum_01_27_c1 = Math.round(R1301_C1 + R1302_C1 + R1320_C1 + R1321_C1 + R1322_C1 + R1323_C1 + R1324_C1 + R1327_C1) 
+    if (R1328_C1 != sum_01_27_c1) {
+        webform.errors.push({
+            'fieldName': 'CAP1_R1328_C1',
+      
+            'weight': 75,
+            'msg': Drupal.t('Cod eroare: 45-015. Rind.(1328) -  [@R1328_C1] = [@sum_01_27_c1] Rind.(1301+1302+1320+1321+1322+1323+1324+1327) pe COL1', { "@R1328_C1": R1328_C1, "@sum_01_27_c1": sum_01_27_c1 })
+        });
+    }
+
+
+
+
+//End 45-015
 
     //-------------------------------------------------------------
 
