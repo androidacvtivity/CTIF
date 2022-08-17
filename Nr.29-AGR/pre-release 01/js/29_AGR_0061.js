@@ -1,7 +1,7 @@
 (function ($) {
 
     var activity_options_default_value = '';
-  
+
 
     Drupal.behaviors.agr29 = {
         attach: function (context, settings) {
@@ -31,7 +31,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
     for (var i = 1; i <= 5; i++) {
         var R1135_C = Number(values["CAP1_R1135_C" + i]);
         var R1136_C = Number(values["CAP1_R1136_C" + i]);
-        if (R1135_C < R1136_C ) {
+        if (R1135_C < R1136_C) {
             webform.errors.push({
                 'fieldName': 'CAP1_R1135_C' + i,
                 'weight': 1,
@@ -276,18 +276,6 @@ webform.validators.agr29 = function (v, allowOverpass) {
     if (!isNaN(Number(values.CAP1_R1422_C1))) {
         var R1422_C1 = Number(values.CAP1_R1422_C1);
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -966,7 +954,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
     for (var i = 1; i <= 5; i++) {
         {
             if (i != 3)
-            var col1 = Number(values["CAP1_R12" + (i <= 5 ? ('2' + i) : i) + "_C3"]);
+                var col1 = Number(values["CAP1_R12" + (i <= 5 ? ('2' + i) : i) + "_C3"]);
             var col2 = Number(values["CAP1_R12" + (i <= 5 ? ('2' + i) : i) + "_C4"]);
 
             if (col1 < col2) {
@@ -1163,7 +1151,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
             var col1 = Number(values["CAP2_R21" + (i <= 4 ? ('0' + i) : i) + "_C2"]);
             var col2 = Number(values["CAP2_R21" + (i <= 4 ? ('0' + i) : i) + "_C4"]);
 
-            if ((col1 == 0 && col2 != 0) ) {
+            if ((col1 == 0 && col2 != 0)) {
                 webform.errors.push({
                     'fieldName': 'CAP2_R21' + (i <= 4 ? ('0' + i) : i) + '_C2',
                     'weight': 62,
@@ -1179,7 +1167,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
             var col1 = Number(values["CAP2_R21" + (i <= 6 ? ('1' + i) : i) + "_C2"]);
             var col2 = Number(values["CAP2_R21" + (i <= 6 ? ('1' + i) : i) + "_C4"]);
 
-            if ((col1 == 0 && col2 != 0) ) {
+            if ((col1 == 0 && col2 != 0)) {
                 webform.errors.push({
                     'fieldName': 'CAP2_R21' + (i <= 6 ? ('1' + i) : i) + '_C2',
                     'weight': 63,
@@ -1196,7 +1184,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
             var col1 = Number(values["CAP2_R21" + (i <= 1 ? ('2' + i) : i) + "_C2"]);
             var col2 = Number(values["CAP2_R21" + (i <= 1 ? ('2' + i) : i) + "_C4"]);
 
-            if ((col1 == 0 && col2 != 0) ) {
+            if ((col1 == 0 && col2 != 0)) {
                 webform.errors.push({
                     'fieldName': 'CAP2_R21' + (i <= 1 ? ('2' + i) : i) + '_C2',
                     'weight': 64,
@@ -1215,7 +1203,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
             var col1 = Number(values["CAP2_R22" + (i <= 9 ? ('0' + i) : i) + "_C2"]);
             var col2 = Number(values["CAP2_R22" + (i <= 9 ? ('0' + i) : i) + "_C4"]);
 
-            if ((col1 == 0 && col2 != 0) ) {
+            if ((col1 == 0 && col2 != 0)) {
                 webform.errors.push({
                     'fieldName': 'CAP2_R22' + (i <= 9 ? ('0' + i) : i) + '_C2',
                     'weight': 65,
@@ -1233,7 +1221,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
             var col1 = Number(values["CAP2_R23" + (i <= 2 ? ('0' + i) : i) + "_C2"]);
             var col2 = Number(values["CAP2_R23" + (i <= 2 ? ('0' + i) : i) + "_C4"]);
 
-            if ((col1 == 0 && col2 != 0) ) {
+            if ((col1 == 0 && col2 != 0)) {
                 webform.errors.push({
                     'fieldName': 'CAP2_R23' + (i <= 2 ? ('0' + i) : i) + '_C2',
                     'weight': 66,
@@ -1386,37 +1374,46 @@ webform.validators.agr29 = function (v, allowOverpass) {
     }
 
 
- // End 45-045
-//---------------------------------------------------------
+    // End 45-045
+    //---------------------------------------------------------
 
     //Start 45-015 
 
-    if (!isNaN(Number(values.CAP1_R1328_C1))){
-    var R1328_015 = Number(values.CAP1_R1328_C1);}
-    if (!isNaN(toFloat(values.CAP1_R1301_C1))){
-    var R1301_015 = toFloat(values.CAP1_R1301_C1);}
-    if (!isNaN(toFloat(values.CAP1_R1302_C1))){
-    var R1302_015 = toFloat(values.CAP1_R1302_C1);}
-    if (!isNaN(Number(values.CAP1_R1320_C1))){
-    var R1320_015 = Number(values.CAP1_R1320_C1);}
-    if (!isNaN(Number(values.CAP1_R1321_C1))){
-    var R1321_015 = Number(values.CAP1_R1321_C1);}
-    if (!isNaN(Number(values.CAP1_R1322_C1))){
-    var R1322_015 = Number(values.CAP1_R1322_C1);} 
-    if (!isNaN(Number(values.CAP1_R1323_C1))){
-    var R1323_015 = Number(values.CAP1_R1323_C1);}
+    if (!isNaN(Number(values.CAP1_R1328_C1))) {
+        var R1328_015 = Number(values.CAP1_R1328_C1);
+    }
+    if (!isNaN(toFloat(values.CAP1_R1301_C1))) {
+        var R1301_015 = toFloat(values.CAP1_R1301_C1);
+    }
+    if (!isNaN(toFloat(values.CAP1_R1302_C1))) {
+        var R1302_015 = toFloat(values.CAP1_R1302_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1320_C1))) {
+        var R1320_015 = Number(values.CAP1_R1320_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1321_C1))) {
+        var R1321_015 = Number(values.CAP1_R1321_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1322_C1))) {
+        var R1322_015 = Number(values.CAP1_R1322_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1323_C1))) {
+        var R1323_015 = Number(values.CAP1_R1323_C1);
+    }
     if (!isNaN(Number(values.CAP1_R1324_C1))) {
-    var R1324_015 = Number(values.CAP1_R1324_C1); }
-    if (!isNaN(Number(values.CAP1_R1327_C1))){
-    var R1327_015 = Number(values.CAP1_R1327_C1);}
+        var R1324_015 = Number(values.CAP1_R1324_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1327_C1))) {
+        var R1327_015 = Number(values.CAP1_R1327_C1);
+    }
 
 
 
-    var sum_01_27_015 = Math.round(R1301_015 + R1302_015 + R1320_015 + R1321_015 + R1322_015 + R1323_015 + R1324_015 + R1327_015) 
+    var sum_01_27_015 = Math.round(R1301_015 + R1302_015 + R1320_015 + R1321_015 + R1322_015 + R1323_015 + R1324_015 + R1327_015)
     if (R1328_015 != sum_01_27_015) {
         webform.warnings.push({
             'fieldName': 'CAP1_R1328_C1',
-      
+
             'weight': 75,
             'msg': Drupal.t('Cod eroare: 45-015.   [@R1328_015] - Rind.(1328) =  Rind.(1301+1302+1320+1321+1322+1323+1324+1327) pe COL1 - [@sum_01_27_015]', { "@R1328_015": R1328_015, "@sum_01_27_015": sum_01_27_015 })
         });
@@ -1425,30 +1422,34 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-//End 45-015
+    //End 45-015
 
 
 
 
 
     //Start 45-001
-    if (!isNaN(Number(values.CAP1_R1101_C1))){
-    var R1101_001  =  Number(values.CAP1_R1101_C1); }
-    
+    if (!isNaN(Number(values.CAP1_R1101_C1))) {
+        var R1101_001 = Number(values.CAP1_R1101_C1);
+    }
+
     if (!isNaN(Number(values.CAP1_R1102_C1))) {
-         var R1102_001 = Number(values.CAP1_R1102_C1); }
+        var R1102_001 = Number(values.CAP1_R1102_C1);
+    }
 
     if (!isNaN(Number(values.CAP1_R1103_C1))) {
-        var R1103_001 = Number(values.CAP1_R1103_C1);}
+        var R1103_001 = Number(values.CAP1_R1103_C1);
+    }
     if (!isNaN(Number(values.CAP1_R1224_C1))) {
-        var R1224_001 = Number(values.CAP1_R1224_C1);}
-   
-    var SUM_001 = Math.round(R1102_001 + R1103_001 + R1224_001 )
+        var R1224_001 = Number(values.CAP1_R1224_C1);
+    }
+
+    var SUM_001 = Math.round(R1102_001 + R1103_001 + R1224_001)
     if (R1101_001 != SUM_001) {
         webform.errors.push({
             'fieldName': 'CAP1_R1101_C1',
 
-            'weight': 76,
+            'weight': 1,
             'msg': Drupal.t('Cod eroare: 45-001. [@R1101_001] - Rind.1101=Rind.1102+1103+1224 pe COL1 - [@SUM_001] ', { "@R1101_001": R1101_001, "@SUM_001": SUM_001 })
         });
     }
@@ -1456,7 +1457,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-// //End 45-001
+    // //End 45-001
 
 
 
@@ -1492,8 +1493,38 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-// //End 45-024
+     //End 45-024
 
+
+    // Start 45-002
+    for (var i = 1; i <= 5; i++) {
+        
+        if (!isNaN(Number(values["CAP1_R1103_C" + i]))){
+        var R1103_C = Number(values["CAP1_R1103_C" + i]);}
+
+
+        if (!isNaN(Decimal(values["CAP1_R1104_C" + i] || 0)
+            .plus(values["CAP1_R1105_C" + i] || 0)
+            .plus(values["CAP1_R1106_C" + i] || 0)
+            .plus(values["CAP1_R1107_C" + i] || 0)))
+            {
+        var SUM_002 = Decimal(values["CAP1_R1104_C" + i] || 0)
+            .plus(values["CAP1_R1105_C" + i] || 0)
+            .plus(values["CAP1_R1106_C" + i] || 0)
+            .plus(values["CAP1_R1107_C" + i] || 0);
+            }
+
+
+        if (R1103_C != SUM_002) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1103_C' + i,
+                'weight': 2,
+                'msg': Drupal.t('Cod eroare: 45-002. [@R1103_C]-  Rind.1103 = Rind.1104 + 1105 + 1106 + 1107 pe coloana.@col  - [@SUM_002]', { '@col': i, "@R1103_C": R1103_C, "@SUM_002": SUM_002 })
+            });
+        }
+    }
+
+    //End 45-002
 
 
     //-------------------------------------------------------------
