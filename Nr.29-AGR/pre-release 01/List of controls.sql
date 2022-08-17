@@ -79,3 +79,7 @@ SELECT
 --         AND  L.FORMULA  NOT LIKE '%>=%'
 --          AND 
 --          L.FORMULA  NOT LIKE '%=>%'
+
+--WHERE 
+--
+--L.CONTROL  NOT  IN ('45-024','45-015','45-001')
