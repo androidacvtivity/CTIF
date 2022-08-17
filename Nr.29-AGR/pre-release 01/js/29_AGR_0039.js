@@ -1262,22 +1262,22 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
     //Start 45-015 
 
-    var R1328_C1 = Number(values.CAP1_R1328_C1);
-    var R1301_C1 = toFloat(values.CAP1_R1301_C1);
-    var R1302_C1 = toFloat(values.CAP1_R1302_C1);
-    var R1320_C1 = Number(values.CAP1_R1320_C1);
-    var R1321_C1 = Number(values.CAP1_R1321_C1);
-    var R1322_C1 = Number(values.CAP1_R1322_C1);
-    var R1323_C1 = Number(values.CAP1_R1323_C1);
-    var R1324_C1 = Number(values.CAP1_R1324_C1);
-    var R1327_C1 = Number(values.CAP1_R1327_C1);
-    var sum_01_27_c1 = Math.round(R1301_C1 + R1302_C1 + R1320_C1 + R1321_C1 + R1322_C1 + R1323_C1 + R1324_C1 + R1327_C1) 
-    if (R1328_C1 != sum_01_27_c1) {
-        webform.errors.push({
+    var R1328_015 = Number(values.CAP1_R1328_C1);
+    var R1301_015 = toFloat(values.CAP1_R1301_C1);
+    var R1302_015 = toFloat(values.CAP1_R1302_C1);
+    var R1320_015 = Number(values.CAP1_R1320_C1);
+    var R1321_015 = Number(values.CAP1_R1321_C1);
+    var R1322_015 = Number(values.CAP1_R1322_C1);
+    var R1323_015 = Number(values.CAP1_R1323_C1);
+    var R1324_015 = Number(values.CAP1_R1324_C1);
+    var R1327_015 = Number(values.CAP1_R1327_C1);
+    var sum_01_27_015 = Math.round(R1301_015 + R1302_015 + R1320_015 + R1321_015 + R1322_015 + R1323_015 + R1324_015 + R1327_015) 
+    if (R1328_015 != sum_01_27_015) {
+        webform.warnings.push({
             'fieldName': 'CAP1_R1328_C1',
       
             'weight': 75,
-            'msg': Drupal.t('Cod eroare: 45-015. Rind.(1328) -  [@R1328_C1] = [@sum_01_27_c1] Rind.(1301+1302+1320+1321+1322+1323+1324+1327) pe COL1', { "@R1328_C1": R1328_C1, "@sum_01_27_c1": sum_01_27_c1 })
+            'msg': Drupal.t('Cod eroare: 45-015.   [@R1328_015] - Rind.(1328) =  Rind.(1301+1302+1320+1321+1322+1323+1324+1327) pe COL1 - [@sum_01_27_015]', { "@R1328_015": R1328_015, "@sum_01_27_015": sum_01_27_015 })
         });
     }
 
@@ -1285,6 +1285,41 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 //End 45-015
+
+
+
+
+
+    //Start 45-024
+    if (!isNaN(Number(values.CAP1_R1440_C1))){
+    var R1440_024  =  Number(values.CAP1_R1440_C1); }
+    
+    if (!isNaN(Number(values.CAP1_R1140_C1))) {
+         var R1140_024 = Number(values.CAP1_R1140_C1); }
+
+    if (!isNaN(Number(values.CAP1_R1244_C1))) {
+        var R1244_024 = Number(values.CAP1_R1244_C1);}
+    if (!isNaN(Number(values.CAP1_R1328_C1))) {
+        var R1328_024 = Number(values.CAP1_R1328_C1);}
+    if (!isNaN(Number(values.CAP1_R1434_C1))) {
+        var R1434_024 = Number(values.CAP1_R1434_C1);
+    }
+    var SUM_024 = Math.round(R1140_024 + R1244_024 + R1328_024 + R1434_024 )
+    if (R1440_024 != SUM_024) {
+        webform.errors.push({
+            'fieldName': 'CAP1_R1440_C1',
+
+            'weight': 76,
+            'msg': Drupal.t('Cod eroare: 45-024. [@R1440_024] - Rind.(1440) = Rind.(1140+1244+1328+1434) pe COL1 - [@SUM_024] ', { "@R1440_024": R1440_024, "@SUM_024": SUM_024 })
+        });
+    }
+
+
+
+
+// //End 45-024
+
+
 
     //-------------------------------------------------------------
 
