@@ -382,25 +382,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-//    // 45 - 005
 
-//     if (R1117_C3 != R1117_C4) {
-//         webform.errors.push({
-//             'fieldName': 'CAP1_R1117_C3',
-//             'weight': 16,
-//             'msg': Drupal.t('Cod eroare: 45-005. Rind.(1117) COL3=Rind.(1117) COL4 ')
-//         });
-//     }
-
-//     if (R1119_C3 != R1119_C4) {
-//         webform.errors.push({
-//             'fieldName': 'CAP1_R1119_C3',
-//             'weight': 17,
-//             'msg': Drupal.t('Cod eroare: 45-005. Rind.(1119) COL3=Rind.(1119) COL4 ')
-//         });
-//     }
-
-//    // 45 - 005
 
     // Start 45-031
     // for (var i = 0; i < 5; i++) {
@@ -1128,8 +1110,94 @@ webform.validators.agr29 = function (v, allowOverpass) {
         }
     }
 
+    // End 45-003
 
-// End 45-003
+    //Start 45 - 005
+    function row_45_005_CAP1(row) {
+        var i;
+        i = row;
+        if (
+
+
+            i == 1117 || i == 1119 
+
+        )
+            return true;
+
+    }
+
+    for (var i = 1117; i <= 1119; i++) {
+        {
+            if (row_45_005_CAP1(i)) {
+
+                if (!isNaN(Number(values["CAP1_R" + (i) + "_C3"]))) {
+                    var col1 = Number(values["CAP1_R" + (i) + "_C3"]);
+                }
+
+                if (!isNaN(Number(values["CAP1_R" + (i) + "_C4"]))) {
+                    var col2 = Number(values["CAP1_R" + (i) + "_C4"]);
+                }
+
+
+                if (col1 != col2) {
+                    webform.errors.push({
+                        'fieldName': 'CAP1_R' + (i) + '_C3',
+                        'weight': 8,
+                        'msg': Drupal.t('Cod eroare: 45-005 [@col1]  - Rind.(1117,1119) COL3 = Rind.(1117,1119) COL4  - [@col2]', { "@col1": col1, "@col2": col2 })
+                    });
+                }
+           
+
+            }
+
+        }
+    }
+
+ //End 45 - 005
+
+
+//Stat 45 - 006
+
+
+    for (var i = 1; i <= 5; i++) {
+        if (!isNaN(Number(values["CAP1_R1134_C" + i]))){
+        var R1134_C = Number(values["CAP1_R1134_C" + i]);}
+
+
+        if (!isNaN(Decimal(values["CAP1_R1123_C" + i] || 0)
+            .plus(values["CAP1_R1124_C" + i] || 0)
+            .plus(values["CAP1_R1125_C" + i] || 0)
+            .plus(values["CAP1_R1126_C" + i] || 0)
+            .plus(values["CAP1_R1127_C" + i] || 0)
+            .plus(values["CAP1_R1133_C" + i] || 0))) {
+
+        var SUM_22_33 = Decimal(values["CAP1_R1123_C" + i] || 0)
+            .plus(values["CAP1_R1124_C" + i] || 0)
+            .plus(values["CAP1_R1125_C" + i] || 0)
+            .plus(values["CAP1_R1126_C" + i] || 0)
+            .plus(values["CAP1_R1127_C" + i] || 0)
+            .plus(values["CAP1_R1133_C" + i] || 0); }
+
+
+        if (R1134_C != SUM_22_33) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1134_C' + i,
+                'weight': 9,
+                'msg': Drupal.t('Cod eroare: 45-006. [@R1134_C] - Rind.(1134) = Rind.(1123+1124+1125+1126+1127+1133)  pe coloana. @col  -  [@SUM_22_33]', { '@col': i, '@R1134_C': R1134_C, '@SUM_22_33': SUM_22_33 })
+            });
+        }
+    }
+
+//     //45-028
+
+//End 45 - 006
+
+
+
+
+
+
+
 
     // Start 45-035
     //-------------------------------------
