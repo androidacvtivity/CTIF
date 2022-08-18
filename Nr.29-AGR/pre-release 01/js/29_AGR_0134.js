@@ -1252,6 +1252,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
                 .plus(values["CAP1_R1121_C" + i] || 0)
                 .plus(values["CAP1_R1123_C" + i] || 0)
                 .plus(values["CAP1_R1124_C" + i] || 0)
+                .plus(values["CAP1_R1126_C" + i] || 0)
                 .plus(values["CAP1_R1127_C" + i] || 0)
                 .plus(values["CAP1_R1133_C" + i] || 0)
                 .plus(values["CAP1_R1135_C" + i] || 0);
@@ -1375,6 +1376,174 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
     //End 45 - 011
+
+
+    function fun_col_35(col) {
+        var i;
+        i = col;
+        if (
+
+            i == 3 || i == 5 
+           
+
+        )
+            return true;
+
+    }
+
+    function fun_col_12(col) {
+        var i;
+        i = col;
+        if (
+
+            i == 1 || i == 2
+
+
+        )
+            return true;
+
+    }
+
+    //Stat 45 - 012
+
+
+    for (var i = 1; i <= 5; i++) {
+
+        if (fun_col_12(i)) {
+
+        if (!isNaN(toFloat(values["CAP1_R1302_C" + i]))) {
+            var R1302_C = toFloat(values["CAP1_R1302_C" + i]);
+        }
+
+
+            if (!isNaN(Decimal(values["CAP1_R1303_C" + i] || 0)
+                .plus(values["CAP1_R1305_C" + i] || 0)
+                .plus(values["CAP1_R1306_C" + i] || 0)
+                .plus(values["CAP1_R1307_C" + i] || 0)
+                .plus(values["CAP1_R1308_C" + i] || 0)
+                .plus(values["CAP1_R1309_C" + i] || 0)
+                .plus(values["CAP1_R1310_C" + i] || 0)
+                .plus(values["CAP1_R1311_C" + i] || 0)
+                .plus(values["CAP1_R1312_C" + i] || 0)
+                .plus(values["CAP1_R1313_C" + i] || 0)
+                .plus(values["CAP1_R1314_C" + i] || 0)
+                .plus(values["CAP1_R1315_C" + i] || 0)
+                .plus(values["CAP1_R1316_C" + i] || 0)
+                .plus(values["CAP1_R1317_C" + i] || 0)
+                .plus(values["CAP1_R1318_C" + i] || 0)
+                .plus(values["CAP1_R1319_C" + i] || 0))
+
+        ) {
+
+                var SUM_45_012 = Decimal(values["CAP1_R1303_C" + i] || 0)
+                    .plus(values["CAP1_R1305_C" + i] || 0)
+                    .plus(values["CAP1_R1306_C" + i] || 0)
+                    .plus(values["CAP1_R1307_C" + i] || 0)
+                    .plus(values["CAP1_R1308_C" + i] || 0)
+                    .plus(values["CAP1_R1309_C" + i] || 0)
+                    .plus(values["CAP1_R1310_C" + i] || 0)
+                    .plus(values["CAP1_R1311_C" + i] || 0)
+                    .plus(values["CAP1_R1312_C" + i] || 0)
+                    .plus(values["CAP1_R1313_C" + i] || 0)
+                    .plus(values["CAP1_R1314_C" + i] || 0)
+                    .plus(values["CAP1_R1315_C" + i] || 0)
+                    .plus(values["CAP1_R1316_C" + i] || 0)
+                    .plus(values["CAP1_R1317_C" + i] || 0)
+                    .plus(values["CAP1_R1318_C" + i] || 0)
+                    .plus(values["CAP1_R1319_C" + i] || 0);
+        }
+
+
+            if (R1302_C != SUM_45_012) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1302_C' + i,
+                'weight': 16,
+                'msg': Drupal.t('Cod eroare: 45-012. [@R1302_C] - Rind.(1302)=Rind.(1303+1305+1306+1307+1308+1309+1310+1311+1312+1313+1314+1315+1316+1317+1318+1319) pe coloana. @col  -  [@SUM_45_012]', { '@col': i, '@R1302_C': R1302_C.toFixed(1), '@SUM_45_012': SUM_45_012.toFixed(1) })
+            });
+        }
+    }
+
+    }
+
+
+
+
+    for (var i = 1; i <= 5; i++) {
+
+        if (fun_col_35(i)) {
+
+            if (!isNaN(Number(values["CAP1_R1302_C" + i]))) {
+                var R1302_C = Number(values["CAP1_R1302_C" + i]);
+            }
+
+
+            if (!isNaN(Decimal(values["CAP1_R1303_C" + i] || 0)
+                .plus(values["CAP1_R1305_C" + i] || 0)
+                .plus(values["CAP1_R1306_C" + i] || 0)
+                .plus(values["CAP1_R1307_C" + i] || 0)
+                .plus(values["CAP1_R1308_C" + i] || 0)
+                .plus(values["CAP1_R1309_C" + i] || 0)
+                .plus(values["CAP1_R1310_C" + i] || 0)
+                .plus(values["CAP1_R1311_C" + i] || 0)
+                .plus(values["CAP1_R1312_C" + i] || 0)
+                .plus(values["CAP1_R1313_C" + i] || 0)
+                .plus(values["CAP1_R1314_C" + i] || 0)
+                .plus(values["CAP1_R1315_C" + i] || 0)
+                .plus(values["CAP1_R1316_C" + i] || 0)
+                .plus(values["CAP1_R1317_C" + i] || 0)
+                .plus(values["CAP1_R1318_C" + i] || 0)
+                .plus(values["CAP1_R1319_C" + i] || 0))
+
+            ) {
+
+                var SUM_45_012 = Decimal(values["CAP1_R1303_C" + i] || 0)
+                    .plus(values["CAP1_R1305_C" + i] || 0)
+                    .plus(values["CAP1_R1306_C" + i] || 0)
+                    .plus(values["CAP1_R1307_C" + i] || 0)
+                    .plus(values["CAP1_R1308_C" + i] || 0)
+                    .plus(values["CAP1_R1309_C" + i] || 0)
+                    .plus(values["CAP1_R1310_C" + i] || 0)
+                    .plus(values["CAP1_R1311_C" + i] || 0)
+                    .plus(values["CAP1_R1312_C" + i] || 0)
+                    .plus(values["CAP1_R1313_C" + i] || 0)
+                    .plus(values["CAP1_R1314_C" + i] || 0)
+                    .plus(values["CAP1_R1315_C" + i] || 0)
+                    .plus(values["CAP1_R1316_C" + i] || 0)
+                    .plus(values["CAP1_R1317_C" + i] || 0)
+                    .plus(values["CAP1_R1318_C" + i] || 0)
+                    .plus(values["CAP1_R1319_C" + i] || 0);
+            }
+
+
+            if (R1302_C != SUM_45_012) {
+                webform.errors.push({
+                    'fieldName': 'CAP1_R1302_C' + i,
+                    'weight': 17,
+                    'msg': Drupal.t('Cod eroare: 45-012. [@R1302_C] - Rind.(1302)=Rind.(1303+1305+1306+1307+1308+1309+1310+1311+1312+1313+1314+1315+1316+1317+1318+1319) pe coloana. @col  -  [@SUM_45_012]', { '@col': i, '@R1302_C': R1302_C, '@SUM_45_012': SUM_45_012 })
+                });
+            }
+        }
+
+    }
+
+    //End 45 - 012
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // Start 45-035
