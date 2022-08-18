@@ -25,22 +25,6 @@
 webform.validators.agr29 = function (v, allowOverpass) {
     var values = Drupal.settings.mywebform.values;
 
-   // 45 - 007
-
-
-    // for (var i = 1; i <= 5; i++) {
-    //     var R1135_C = Number(values["CAP1_R1135_C" + i]);
-    //     var R1136_C = Number(values["CAP1_R1136_C" + i]);
-    //     if (R1135_C < R1136_C) {
-    //         webform.errors.push({
-    //             'fieldName': 'CAP1_R1135_C' + i,
-    //             'weight': 1,
-    //             'msg': Drupal.t('Cod eroare: 45-007. Rind.(1135)>=Rind.(1136) pe coloana.@col', { '@col': i })
-    //         });
-    //     }
-    // }
-
-   // 45 - 007
 
     // //45 - 009
     // for (var i = 1; i <= 4; i++) {
@@ -57,71 +41,71 @@ webform.validators.agr29 = function (v, allowOverpass) {
     // //45 - 009
 
 
-// // 45-028
-//     for (var i = 1; i <= 5; i++) {
-//         var R2120_C = Number(values["CAP2_R2120_C" + i]);
-//         var R2121_C = Number(values["CAP2_R2121_C" + i]);
-//         if (R2120_C < R2121_C) {
-//             webform.errors.push({
-//                 'fieldName': 'CAP2_R2120_C' + i,
-//                 'weight': 3,
-//                 'msg': Drupal.t('Cod eroare: 45-028. Rind.(2120)>=Rind.(2121)  pe coloana.@col', { '@col': i })
-//             });
-//         }
-//     }
+    // // 45-028
+    //     for (var i = 1; i <= 5; i++) {
+    //         var R2120_C = Number(values["CAP2_R2120_C" + i]);
+    //         var R2121_C = Number(values["CAP2_R2121_C" + i]);
+    //         if (R2120_C < R2121_C) {
+    //             webform.errors.push({
+    //                 'fieldName': 'CAP2_R2120_C' + i,
+    //                 'weight': 3,
+    //                 'msg': Drupal.t('Cod eroare: 45-028. Rind.(2120)>=Rind.(2121)  pe coloana.@col', { '@col': i })
+    //             });
+    //         }
+    //     }
 
-// //45-028
-
-
-// //45-036
-//     for (var i = 1; i <= 2; i++) {
-//         var R1630_C = Number(values["CAP1_R1630_C" + i]);
-//         var R1631_C = Number(values["CAP1_R1631_C" + i]);
-//         if (R1630_C < R1631_C) {
-//             webform.errors.push({
-//                 'fieldName': 'CAP1_R1630_C' + i,
-//                 'weight': 4,
-//                 'msg': Drupal.t('Cod eroare: 45-036. Rind.1630 >= Rind.1631  pe coloana.@col', { '@col': i })
-//             });
-//         }
-//     }
-// //45-036
+    // //45-028
 
 
-// //45-028
-
-//     for (var i = 1; i <= 2; i++) {
-//         var R1701_C = Number(values["CAP1A_R1701_C" + i]);
-//         var R1702_C_SUM = Decimal(values["CAP1A_R1702_C" + i] || 0)
-//             .plus(values["CAP1A_R1703_C" + i] || 0)
-//             .plus(values["CAP1A_R1704_C" + i] || 0);
-//         if (R1701_C < R1702_C_SUM) {
-//             webform.errors.push({
-//                 'fieldName': 'CAP1A_R1701_C' + i,
-//                 'weight': 5,
-//                 'msg': Drupal.t('Cod eroare: 45-028.  Rind.(1701)>=Rind.(1702+1703+1704) pe coloana.@col', { '@col': i })
-//             });
-//         }
-//     }
-
-//     //45-028
+    // //45-036
+    //     for (var i = 1; i <= 2; i++) {
+    //         var R1630_C = Number(values["CAP1_R1630_C" + i]);
+    //         var R1631_C = Number(values["CAP1_R1631_C" + i]);
+    //         if (R1630_C < R1631_C) {
+    //             webform.errors.push({
+    //                 'fieldName': 'CAP1_R1630_C' + i,
+    //                 'weight': 4,
+    //                 'msg': Drupal.t('Cod eroare: 45-036. Rind.1630 >= Rind.1631  pe coloana.@col', { '@col': i })
+    //             });
+    //         }
+    //     }
+    // //45-036
 
 
-// //45-037
+    // //45-028
 
-//     for (var i = 1; i <= 2; i++) {
-//         var R1116_C = Number(values["CAP1_R1116_C" + i]);
-//         var R1117_C = Number(values["CAP1_R1117_C" + i]);
-//         if (R1116_C != R1117_C) {
-//             webform.errors.push({
-//                 'fieldName': 'CAP1_R1116_C' + i,
-//                 'weight': 6,
-//                 'msg': Drupal.t('Cod eroare: 45-037. Rind.1116 col.1,2 = Rind.1117  pe coloana.@col', { '@col': i })
-//             });
-//         }
-//     }
+    //     for (var i = 1; i <= 2; i++) {
+    //         var R1701_C = Number(values["CAP1A_R1701_C" + i]);
+    //         var R1702_C_SUM = Decimal(values["CAP1A_R1702_C" + i] || 0)
+    //             .plus(values["CAP1A_R1703_C" + i] || 0)
+    //             .plus(values["CAP1A_R1704_C" + i] || 0);
+    //         if (R1701_C < R1702_C_SUM) {
+    //             webform.errors.push({
+    //                 'fieldName': 'CAP1A_R1701_C' + i,
+    //                 'weight': 5,
+    //                 'msg': Drupal.t('Cod eroare: 45-028.  Rind.(1701)>=Rind.(1702+1703+1704) pe coloana.@col', { '@col': i })
+    //             });
+    //         }
+    //     }
 
-//     //45-037
+    //     //45-028
+
+
+    // //45-037
+
+    //     for (var i = 1; i <= 2; i++) {
+    //         var R1116_C = Number(values["CAP1_R1116_C" + i]);
+    //         var R1117_C = Number(values["CAP1_R1117_C" + i]);
+    //         if (R1116_C != R1117_C) {
+    //             webform.errors.push({
+    //                 'fieldName': 'CAP1_R1116_C' + i,
+    //                 'weight': 6,
+    //                 'msg': Drupal.t('Cod eroare: 45-037. Rind.1116 col.1,2 = Rind.1117  pe coloana.@col', { '@col': i })
+    //             });
+    //         }
+    //     }
+
+    //     //45-037
 
 
 
@@ -556,7 +540,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-    
+
     // // Start 45-003
 
     // for (var i = 3; i < 8; i++) {
@@ -885,7 +869,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
     }
 
 
-// End function
+    // End function
 
 
 
@@ -924,7 +908,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
         {
             if (
 
-                (row_45_004_CAP2(i)) 
+                (row_45_004_CAP2(i))
 
 
 
@@ -954,7 +938,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
     }
 
 
-// End 45-004
+    // End 45-004
 
 
     function row_45_003_CAP1(row) {
@@ -963,14 +947,14 @@ webform.validators.agr29 = function (v, allowOverpass) {
         if (
 
             i == 1103 || i == 1104 || i == 1105 || i == 1106 || i == 1107 || i == 1110 || i == 1112 || i == 1113
-            || i == 1115 || i == 1116 || i == 1117 || i == 1119 || i == 1120 || i == 1121 || i == 1123 || i == 1124 
+            || i == 1115 || i == 1116 || i == 1117 || i == 1119 || i == 1120 || i == 1121 || i == 1123 || i == 1124
             || i == 1125 || i == 1126
             || i == 1127 || i == 1133 || i == 1134 || i == 1135 || i == 1136 || i == 1140 || i == 1213 || i == 1214
             || i == 1215 || i == 1216 || i == 1218 || i == 1219 || i == 1221 || i == 1224 || i == 1225
-            || i == 1230 || i == 1232 || i == 1234 || i == 1235 || i == 1236 || i == 1237 || i == 1238 || i == 1232 
-            || i == 1240 || i == 1320 || i == 1321 || i == 1322 || i == 1323 || i == 1324 || i == 1325 
-            || i == 1325 || i == 1326 || i == 1327 
-            || i == 1401 || i == 1402 || i == 1403 || i == 1404 || i == 1405 || i == 1406 || i == 1409     
+            || i == 1230 || i == 1232 || i == 1234 || i == 1235 || i == 1236 || i == 1237 || i == 1238 || i == 1232
+            || i == 1240 || i == 1320 || i == 1321 || i == 1322 || i == 1323 || i == 1324 || i == 1325
+            || i == 1325 || i == 1326 || i == 1327
+            || i == 1401 || i == 1402 || i == 1403 || i == 1404 || i == 1405 || i == 1406 || i == 1409
 
         )
             return true;
@@ -990,7 +974,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
             return true;
 
     }
-    
+
 
 
     // Start 45-003
@@ -1037,7 +1021,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
     }
 
-//float
+    //float
     for (var i = 1302; i <= 1319; i++) {
         {
             if (row_45_003_CAP1_float(i)) {
@@ -1119,7 +1103,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
         if (
 
 
-            i == 1117 || i == 1119 
+            i == 1117 || i == 1119
 
         )
             return true;
@@ -1146,22 +1130,23 @@ webform.validators.agr29 = function (v, allowOverpass) {
                         'msg': Drupal.t('Cod eroare: 45-005 [@col1]  - Rind.(1117,1119) COL3 = Rind.(1117,1119) COL4  - [@col2]', { "@col1": col1, "@col2": col2 })
                     });
                 }
-           
+
 
             }
 
         }
     }
 
- //End 45 - 005
+    //End 45 - 005
 
 
-//Stat 45 - 006
+    //Stat 45 - 006
 
 
     for (var i = 1; i <= 5; i++) {
-        if (!isNaN(Number(values["CAP1_R1134_C" + i]))){
-        var R1134_C = Number(values["CAP1_R1134_C" + i]);}
+        if (!isNaN(Number(values["CAP1_R1134_C" + i]))) {
+            var R1134_C = Number(values["CAP1_R1134_C" + i]);
+        }
 
 
         if (!isNaN(Decimal(values["CAP1_R1123_C" + i] || 0)
@@ -1171,12 +1156,13 @@ webform.validators.agr29 = function (v, allowOverpass) {
             .plus(values["CAP1_R1127_C" + i] || 0)
             .plus(values["CAP1_R1133_C" + i] || 0))) {
 
-        var SUM_22_33 = Decimal(values["CAP1_R1123_C" + i] || 0)
-            .plus(values["CAP1_R1124_C" + i] || 0)
-            .plus(values["CAP1_R1125_C" + i] || 0)
-            .plus(values["CAP1_R1126_C" + i] || 0)
-            .plus(values["CAP1_R1127_C" + i] || 0)
-            .plus(values["CAP1_R1133_C" + i] || 0); }
+            var SUM_22_33 = Decimal(values["CAP1_R1123_C" + i] || 0)
+                .plus(values["CAP1_R1124_C" + i] || 0)
+                .plus(values["CAP1_R1125_C" + i] || 0)
+                .plus(values["CAP1_R1126_C" + i] || 0)
+                .plus(values["CAP1_R1127_C" + i] || 0)
+                .plus(values["CAP1_R1133_C" + i] || 0);
+        }
 
 
         if (R1134_C != SUM_22_33) {
@@ -1188,14 +1174,102 @@ webform.validators.agr29 = function (v, allowOverpass) {
         }
     }
 
-//     //45-028
+   
 
-//End 45 - 006
-
-
+    //End 45 - 006
 
 
 
+    // 45 - 007
+
+
+    for (var i = 1; i <= 5; i++) {
+
+
+        if (!isNaN(Number(values["CAP1_R1135_C" + i]))) {
+            var R1135_C = Number(values["CAP1_R1135_C" + i]);
+        }
+
+        if (!isNaN(Number(values["CAP1_R1136_C" + i]))) {
+            var R1136_C = Number(values["CAP1_R1136_C" + i]);
+        }
+
+
+        if (R1135_C < R1136_C) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1135_C' + i,
+                'weight': 10,
+                'msg': Drupal.t('Cod eroare: 45-007. [@R1135_C] - Rind.(1135)>=Rind.(1136)  pe coloana. @col  -  [@R1136_C]', { '@col': i, '@R1135_C': R1135_C, '@R1136_C': R1136_C })
+            });
+        }
+    }
+
+    // 45 - 007
+
+
+
+
+    //Stat 45 - 008
+
+
+    for (var i = 1; i <= 5; i++) {
+        if (!isNaN(Number(values["CAP1_R1140_C" + i]))) {
+            var R1140_C = Number(values["CAP1_R1140_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP1_R1104_C" + i] || 0)
+            .plus(values["CAP1_R1105_C" + i] || 0)
+            .plus(values["CAP1_R1106_C" + i] || 0)
+            .plus(values["CAP1_R1107_C" + i] || 0)
+            .plus(values["CAP1_R1110_C" + i] || 0)
+            .plus(values["CAP1_R1112_C" + i] || 0)
+            .plus(values["CAP1_R1113_C" + i] || 0)
+            .plus(values["CAP1_R1115_C" + i] || 0)
+            .plus(values["CAP1_R1117_C" + i] || 0)
+            .plus(values["CAP1_R1120_C" + i] || 0)
+            .plus(values["CAP1_R1121_C" + i] || 0)
+            .plus(values["CAP1_R1123_C" + i] || 0)
+            .plus(values["CAP1_R1124_C" + i] || 0)
+            .plus(values["CAP1_R1126_C" + i] || 0)
+            .plus(values["CAP1_R1127_C" + i] || 0)
+            .plus(values["CAP1_R1133_C" + i] || 0)
+            .plus(values["CAP1_R1135_C" + i] || 0)
+            )
+            
+            ) {
+
+            var SUM_45_008 = Decimal(values["CAP1_R1104_C" + i] || 0)
+                .plus(values["CAP1_R1105_C" + i] || 0)
+                .plus(values["CAP1_R1106_C" + i] || 0)
+                .plus(values["CAP1_R1107_C" + i] || 0)
+                .plus(values["CAP1_R1110_C" + i] || 0)
+                .plus(values["CAP1_R1112_C" + i] || 0)
+                .plus(values["CAP1_R1113_C" + i] || 0)
+                .plus(values["CAP1_R1115_C" + i] || 0)
+                .plus(values["CAP1_R1117_C" + i] || 0)
+                .plus(values["CAP1_R1120_C" + i] || 0)
+                .plus(values["CAP1_R1121_C" + i] || 0)
+                .plus(values["CAP1_R1123_C" + i] || 0)
+                .plus(values["CAP1_R1124_C" + i] || 0)
+                .plus(values["CAP1_R1127_C" + i] || 0)
+                .plus(values["CAP1_R1133_C" + i] || 0)
+                .plus(values["CAP1_R1135_C" + i] || 0);
+        }
+
+
+        if (R1140_C != SUM_45_008) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1140_C' + i,
+                'weight': 11,
+                'msg': Drupal.t('Cod eroare: 45-008. [@R1140_C] - Rind.(1140) = Rind.(1104 pina la 1107+1110+1112+1113+1115+1117+1120+1121+1123 pina la 1133+1135)  pe coloana. @col  -  [@SUM_45_008]', { '@col': i, '@R1140_C': R1140_C, '@SUM_45_008': SUM_45_008 })
+            });
+        }
+    }
+
+
+
+    //End 45 - 008
 
 
 
@@ -1555,21 +1629,21 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
     // Start 45-002
     for (var i = 1; i <= 5; i++) {
-        
-        if (!isNaN(Number(values["CAP1_R1103_C" + i]))){
-        var R1103_C = Number(values["CAP1_R1103_C" + i]);}
+
+        if (!isNaN(Number(values["CAP1_R1103_C" + i]))) {
+            var R1103_C = Number(values["CAP1_R1103_C" + i]);
+        }
 
 
         if (!isNaN(Decimal(values["CAP1_R1104_C" + i] || 0)
             .plus(values["CAP1_R1105_C" + i] || 0)
             .plus(values["CAP1_R1106_C" + i] || 0)
-            .plus(values["CAP1_R1107_C" + i] || 0)))
-            {
-        var SUM_002 = Decimal(values["CAP1_R1104_C" + i] || 0)
-            .plus(values["CAP1_R1105_C" + i] || 0)
-            .plus(values["CAP1_R1106_C" + i] || 0)
-            .plus(values["CAP1_R1107_C" + i] || 0);
-            }
+            .plus(values["CAP1_R1107_C" + i] || 0))) {
+            var SUM_002 = Decimal(values["CAP1_R1104_C" + i] || 0)
+                .plus(values["CAP1_R1105_C" + i] || 0)
+                .plus(values["CAP1_R1106_C" + i] || 0)
+                .plus(values["CAP1_R1107_C" + i] || 0);
+        }
 
 
         if (R1103_C != SUM_002) {
