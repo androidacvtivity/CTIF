@@ -1156,6 +1156,43 @@ webform.validators.agr29 = function (v, allowOverpass) {
  //End 45 - 005
 
 
+//Stat 45 - 006
+
+
+    for (var i = 1; i <= 5; i++) {
+        if (!isNaN(Number(values["CAP1_R1134_C" + i]))){
+        var R1134_C = Number(values["CAP1_R1134_C" + i]);}
+
+
+        if (!isNaN(Decimal(values["CAP1_R1123_C" + i] || 0)
+            .plus(values["CAP1_R1124_C" + i] || 0)
+            .plus(values["CAP1_R1125_C" + i] || 0)
+            .plus(values["CAP1_R1126_C" + i] || 0)
+            .plus(values["CAP1_R1127_C" + i] || 0)
+            .plus(values["CAP1_R1133_C" + i] || 0))) {
+
+        var SUM_22_33 = Decimal(values["CAP1_R1123_C" + i] || 0)
+            .plus(values["CAP1_R1124_C" + i] || 0)
+            .plus(values["CAP1_R1125_C" + i] || 0)
+            .plus(values["CAP1_R1126_C" + i] || 0)
+            .plus(values["CAP1_R1127_C" + i] || 0)
+            .plus(values["CAP1_R1133_C" + i] || 0); }
+
+
+        if (R1134_C != SUM_22_33) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1134_C' + i,
+                'weight': 9,
+                'msg': Drupal.t('Cod eroare: 45-006. [@R1134_C] - Rind.(1134) = Rind.(1123+1124+1125+1126+1127+1133)  pe coloana. @col  -  [@SUM_22_33]', { '@col': i, '@R1134_C': R1134_C, '@SUM_22_33': SUM_22_33 })
+            });
+        }
+    }
+
+//     //45-028
+
+//End 45 - 006
+
+
 
 
 
