@@ -905,6 +905,9 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 // End function
 
+
+
+
     // Start 45-004
 
     for (var i = 1103; i <= 1240; i++) {
@@ -923,7 +926,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
                 if (col1 < col2) {
                     webform.errors.push({
                         'fieldName': 'CAP1_R' + (i) + '_C3',
-                        'weight': 45,
+                        'weight': 6,
                         'msg': Drupal.t('Cod eroare: 45-004 [@col1]  - Rind.(1103-1225) COL3 >= Rind.(1103-1225) COL4  - [@col2]', { "@col1": col1, "@col2": col2 })
                     });
                 }
@@ -957,8 +960,8 @@ webform.validators.agr29 = function (v, allowOverpass) {
                 if (col1 < col2) {
                     webform.errors.push({
                         'fieldName': 'CAP2_R' + (i) + '_C3',
-                        'weight': 46,
-                        'msg': Drupal.t('Cod eroare: 45-004 [@col1]  - Rind.(2101-2302) COL3 >= Rind.(1103-1225) COL4  - [@col2]', { "@col1": col1, "@col2": col2 })
+                        'weight': 7,
+                        'msg': Drupal.t('Cod eroare: 45-004 [@col1]  - Rind.(2101-2301) COL3 >= Rind.(2101-2301) COL4  - [@col2]', { "@col1": col1, "@col2": col2 })
                     });
                 }
             } //end  if 
@@ -969,9 +972,165 @@ webform.validators.agr29 = function (v, allowOverpass) {
     }
 
 
+// End 45-004
 
 
-    // End 45-004
+    function row_45_003_CAP1(row) {
+        var i;
+        i = row;
+        if (
+
+            i == 1103 || i == 1104 || i == 1105 || i == 1106 || i == 1107 || i == 1110 || i == 1112 || i == 1113
+            || i == 1115 || i == 1116 || i == 1117 || i == 1119 || i == 1120 || i == 1121 || i == 1123 || i == 1124 
+            || i == 1125 || i == 1126
+            || i == 1127 || i == 1133 || i == 1134 || i == 1135 || i == 1136 || i == 1140 || i == 1213 || i == 1214
+            || i == 1215 || i == 1216 || i == 1218 || i == 1219 || i == 1221 || i == 1224 || i == 1225
+            || i == 1230 || i == 1232 || i == 1234 || i == 1235 || i == 1236 || i == 1237 || i == 1238 || i == 1232 
+            || i == 1240 || i == 1320 || i == 1321 || i == 1322 || i == 1323 || i == 1324 || i == 1325 
+            || i == 1325 || i == 1326 || i == 1327 
+            || i == 1401 || i == 1402 || i == 1403 || i == 1404 || i == 1405 || i == 1406 || i == 1409     
+
+        )
+            return true;
+
+    }
+
+
+    // Start function 
+    function row_45_003_CAP2(row) {
+        var i;
+        i = row;
+        if (
+
+            i == 2101 || i == 2102 || i == 2103 || i == 2201 || i == 2301 || i == 2302
+
+        )
+            return true;
+
+    }
+    
+
+
+    // Start 45-003
+
+    for (var i = 1103; i <= 1409; i++) {
+        {
+            if (row_45_003_CAP1(i)) {
+
+                if (!isNaN(Number(values["CAP1_R" + (i) + "_C1"]))) {
+                    var col1 = Number(values["CAP1_R" + (i) + "_C1"]);
+                }
+
+                if (!isNaN(Number(values["CAP1_R" + (i) + "_C2"]))) {
+                    var col2 = Number(values["CAP1_R" + (i) + "_C2"]);
+                }
+
+
+                if (col1 < col2) {
+                    webform.errors.push({
+                        'fieldName': 'CAP1_R' + (i) + '_C1',
+                        'weight': 3,
+                        'msg': Drupal.t('Cod eroare: 45-003 [@col1]  - Rind.(1103-1409) COL1 >= Rind.(1103-1409) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
+                    });
+                }
+            }
+
+
+
+        }
+    }
+
+    function row_45_003_CAP1_float(row) {
+        var i;
+        i = row;
+        if (
+
+
+            i == 1302 || i == 1303 || i == 1305 || i == 1306 || i == 1307 || i == 1308 || i == 1309
+            || i == 1310 || i == 1311 || i == 1312 || i == 1313 || i == 1314 || i == 1315 || i == 1316 || i == 1317
+            || i == 1318 || i == 1319
+
+        )
+            return true;
+
+    }
+
+//float
+    for (var i = 1302; i <= 1319; i++) {
+        {
+            if (row_45_003_CAP1_float(i)) {
+
+                if (!isNaN(toFloat(values["CAP1_R" + (i) + "_C1"]))) {
+                    var col1 = toFloat(values["CAP1_R" + (i) + "_C1"]);
+                }
+
+                if (!isNaN(toFloat(values["CAP1_R" + (i) + "_C2"]))) {
+                    var col2 = toFloat(values["CAP1_R" + (i) + "_C2"]);
+                }
+
+
+                if (col1 < col2) {
+                    webform.errors.push({
+                        'fieldName': 'CAP1_R' + (i) + '_C1',
+                        'weight': 4,
+                        'msg': Drupal.t('Cod eroare: 45-003 [@col1]  - Rind.(1302-1319) COL1 >= Rind.(1302-1319) COL2  - [@col2]', { "@col1": col1.toFixed(1), "@col2": col2.toFixed(1) })
+                    });
+                }
+            }
+
+
+
+        }
+    }
+
+    // Start function 
+    function row_45_003_CAP2(row) {
+        var i;
+        i = row;
+        if (
+
+            i == 2101 || i == 2102 || i == 2103 || i == 2201 || i == 2301 || i == 2302
+
+        )
+            return true;
+
+    }
+    for (var i = 2101; i <= 2302; i++) {
+        {
+            if (
+
+                (row_45_003_CAP2(i))
+
+
+
+            ) {
+
+                if (!isNaN(Number(values["CAP2_R" + (i) + "_C1"]))) {
+                    var col1 = Number(values["CAP2_R" + (i) + "_C1"]);
+                }
+
+                if (!isNaN(Number(values["CAP2_R" + (i) + "_C2"]))) {
+                    var col2 = Number(values["CAP2_R" + (i) + "_C2"]);
+                }
+
+
+                if (col1 < col2) {
+                    webform.errors.push({
+                        'fieldName': 'CAP2_R' + (i) + '_C1',
+                        'weight': 5,
+                        'msg': Drupal.t('Cod eroare: 45-003 [@col1]  - Rind.(2101-2302) COL3 >= Rind.(1103-1225) COL4  - [@col2]', { "@col1": col1, "@col2": col2 })
+                    });
+                }
+            } //end  if 
+
+
+
+        }
+    }
+
+
+// End 45-003
+
     // Start 45-035
     //-------------------------------------
 
