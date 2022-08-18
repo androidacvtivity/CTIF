@@ -1292,12 +1292,55 @@ webform.validators.agr29 = function (v, allowOverpass) {
             webform.errors.push({
                 'fieldName': 'CAP1_R1218_C' + i,
                 'weight': 12,
-                'msg': Drupal.t('Cod eroare: 45-007. [@R1218_C] - Rind.(1218)>=Rind.(1219) pe coloana  @col  -  [@R1219_C]', { '@col': i, '@R1218_C': R1218_C, '@R1219_C': R1219_C })
+                'msg': Drupal.t('Cod eroare: 45-009. [@R1218_C] - Rind.(1218)>=Rind.(1219) pe coloana  @col  -  [@R1219_C]', { '@col': i, '@R1218_C': R1218_C, '@R1219_C': R1219_C })
             });
         }
     }
 
     // 45 - 007
+
+
+    //Stat 45 - 010
+
+
+    for (var i = 1; i <= 3; i++) {
+        if (!isNaN(Number(values["CAP1_R1232_C" + i]))) {
+            var R1232_C = Number(values["CAP1_R1232_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP1_R1234_C" + i] || 0)
+            .plus(values["CAP1_R1234_C" + i] || 0)    
+            .plus(values["CAP1_R1235_C" + i] || 0)
+            .plus(values["CAP1_R1236_C" + i] || 0)
+            .plus(values["CAP1_R1237_C" + i] || 0)
+            .plus(values["CAP1_R1238_C" + i] || 0)
+            .plus(values["CAP1_R1239_C" + i] || 0))) {
+
+            var SUM_45_010 = Decimal(values["CAP1_R1123_C" + i] || 0)
+                .plus(values["CAP1_R1234_C" + i] || 0)    
+                .plus(values["CAP1_R1235_C" + i] || 0)
+                .plus(values["CAP1_R1236_C" + i] || 0)
+                .plus(values["CAP1_R1237_C" + i] || 0)
+                .plus(values["CAP1_R1238_C" + i] || 0)
+                .plus(values["CAP1_R1239_C" + i] || 0);
+        }
+
+
+        if (R1232_C != SUM_45_010) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1232_C' + i,
+                'weight': 14,
+                'msg': Drupal.t('Cod eroare: 45-010. [@R1232_C] - Rind.(1232) = Rind.(1234+1235+1236+1237+1238+1239)   pe coloana. @col  -  [@SUM_45_010]', { '@col': i, '@R1232_C': R1232_C, '@SUM_45_010': SUM_45_010 })
+            });
+        }
+    }
+
+
+
+    //End 45 - 010
+
+
 
 
     // Start 45-035
