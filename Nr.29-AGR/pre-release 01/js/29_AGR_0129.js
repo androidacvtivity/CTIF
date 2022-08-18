@@ -1342,6 +1342,40 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
+    //Stat 45 - 011
+
+
+    for (var i = 2; i <= 2; i++) {
+        if (!isNaN(Number(values["CAP1_R1240_C" + i]))) {
+            var R1240_C = Number(values["CAP1_R1240_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP1_R1241_C" + i] || 0)
+            .plus(values["CAP1_R1242_C" + i] || 0)
+            
+            
+            )) {
+
+            var SUM_45_011 = Decimal(values["CAP1_R1241_C" + i] || 0)
+                .plus(values["CAP1_R1242_C" + i] || 0);
+            
+        }
+
+
+        if (R1240_C != SUM_45_011) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1240_C' + i,
+                'weight': 15,
+                'msg': Drupal.t('Cod eroare: 45-011. [@R1240_C] - Rind.(1240) = Rind.(1241+1242) COL.2  pe coloana. @col  -  [@SUM_45_011]', { '@col': i, '@R1240_C': R1240_C, '@SUM_45_011': SUM_45_011 })
+            });
+        }
+    }
+
+
+
+    //End 45 - 011
+
 
     // Start 45-035
     //-------------------------------------
