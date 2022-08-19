@@ -136,15 +136,15 @@ webform.validators.agr29 = function (v, allowOverpass) {
     // }
 
 
-    // if (!isNaN(Number(values.CAP1_R1329_C3))) {
-    //     var R1329_C3 = Number(values.CAP1_R1329_C3);
-    // }
+    if (!isNaN(Number(values.CAP1_R1329_C3))) {
+        var R1329_C3 = Number(values.CAP1_R1329_C3);
+    }
 
 
 
-    // if (!isNaN(Number(values.CAP1A_R1701_C2))) {
-    //     var R1701_C2 = Number(values.CAP1A_R1701_C2);
-    // }
+    if (!isNaN(Number(values.CAP1A_R1701_C2))) {
+        var R1701_C2 = Number(values.CAP1A_R1701_C2);
+    }
 
 
     // if (!isNaN(Number(values.CAP1_R1330_C5))) {
@@ -345,13 +345,13 @@ webform.validators.agr29 = function (v, allowOverpass) {
     //     });
     // }
 
-    // if (R1329_C3 != R1701_C2) {
-    //     webform.errors.push({
-    //         'fieldName': 'CAP1_R1329_C3',
-    //         'weight': 14,
-    //         'msg': Drupal.t('Cod eroare: 45-016. Rind.(1329) COL3 = Rind.(1701) pe COL2 ')
-    //     });
-    // }
+    if (R1329_C3 != R1701_C2) {
+        webform.errors.push({
+            'fieldName': 'CAP1_R1329_C3',
+            'weight': 21,
+            'msg': Drupal.t('Cod eroare: 45-016. [@R1329_C3]- Rind.(1329) COL3 = Rind.(1701) pe COL2 - [@R1701_C2] ', { "@R1701_C2": R1701_C2, "@R1329_C3": R1329_C3 })
+        });
+    }
 
 
 
@@ -1929,7 +1929,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
         webform.warnings.push({
             'fieldName': 'CAP1_R1328_C1',
 
-            'weight': 75,
+            'weight': 20,
             'msg': Drupal.t('Cod eroare: 45-015.   [@R1328_015] - Rind.(1328) =  Rind.(1301+1302+1320+1321+1322+1323+1324+1327) pe COL1 - [@sum_01_27_015]', { "@R1328_015": R1328_015, "@sum_01_27_015": sum_01_27_015 })
         });
     }
