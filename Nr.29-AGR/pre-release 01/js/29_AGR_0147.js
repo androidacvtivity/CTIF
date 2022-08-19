@@ -1406,6 +1406,20 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
     }
 
+
+    function fun_col_1235(col) {
+        var i;
+        i = col;
+        if (
+
+            i == 1 || i == 2 || i == 3 || i == 5
+
+
+        )
+            return true;
+
+    }
+
     //Stat 45 - 012
 
 
@@ -1593,7 +1607,45 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
+    //Stat 45 - 014
 
+
+    for (var i = 1; i <= 5; i++) {
+
+        if (fun_col_1235(i)) {
+
+            if (!isNaN(Number(values["CAP1_R1324_C" + i]))) {
+                var R1324_C = Number(values["CAP1_R1324_C" + i]);
+            }
+
+
+            if (!isNaN(Decimal(values["CAP1_R1325_C" + i] || 0)
+                .plus(values["CAP1_R1326_C" + i] || 0)
+               
+
+            )
+
+            ) {
+
+                var SUM_45_014 = Decimal(values["CAP1_R1325_C" + i] || 0)
+                    .plus(values["CAP1_R1326_C" + i] || 0);
+                   
+            }
+
+
+            if (R1324_C != SUM_45_014) {
+                webform.errors.push({
+                    'fieldName': 'CAP1_R1324_C' + i,
+                    'weight': 19,
+                    'msg': Drupal.t('Cod eroare: 45-014. [@R1324_C] - Rind.(1324) = Rind.(1325+1326) pe COL1,2,3,5  @col  -  [@SUM_45_014]', { '@col': i, '@R1324_C': R1324_C, '@SUM_45_014': SUM_45_014 })
+                });
+            }
+        }
+
+    }
+
+
+  //End 45-014
 
 
 
