@@ -161,14 +161,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
     //     var R1117_C4 = Number(values.CAP1_R1117_C4);
     // }
 
-    // if (!isNaN(Number(values.CAP1_R1302_C5))) {
-    //     var R1302_C5 = Number(values.CAP1_R1302_C5);
-    // }
 
-
-    // if (!isNaN(Number(values.CAP1_R1119_C3))) {
-    //     var R1119_C3 = Number(values.CAP1_R1119_C3);
-    // }
 
     // if (!isNaN(Number(values.CAP1_R1119_C4))) {
     //     var R1119_C4 = Number(values.CAP1_R1119_C4);
@@ -355,13 +348,6 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-    // if (R1330_C5 != R1302_C5) {
-    //     webform.errors.push({
-    //         'fieldName': 'CAP1_R1330_C5',
-    //         'weight': 15,
-    //         'msg': Drupal.t('Cod eroare: 45-018. Rind.(1330) COL5 = Rind.(1302) pe COL5 ')
-    //     });
-    // }
 
 
 
@@ -1650,6 +1636,78 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
+
+    //Stat 45 - 017
+
+
+    for (var i = 3; i <= 3; i++) {
+
+       
+
+            if (!isNaN(Number(values["CAP1_R1330_C" + i]))) {
+                var R1330_C = Number(values["CAP1_R1330_C" + i]);
+            }
+
+
+            if (!isNaN(Decimal(values["CAP1_R1302_C" + i] || 0)
+                .plus(values["CAP1_R1329_C" + i] || 0))) {
+
+                var SUM_45_017 = Decimal(values["CAP1_R1302_C" + i] || 0)
+                    .plus(values["CAP1_R1329_C" + i] || 0);
+
+            }
+
+
+        if (R1330_C != SUM_45_017) {
+                webform.errors.push({
+                    'fieldName': 'CAP1_R1330_C' + i,
+                    'weight': 20,
+                    'msg': Drupal.t('Cod eroare: 45-017. [@R1330_C] - Rind.(1330) COL3=Rind.(1302+1329)  @col  -  [@SUM_45_017]', { '@col': i, '@R1330_C': R1330_C, '@SUM_45_017': SUM_45_017 })
+                });
+            }
+        
+
+    }
+
+
+  //End 45-017
+
+
+
+
+    //Stat 45 - 018
+
+
+    for (var i = 5; i <= 5; i++) {
+
+
+
+        if (!isNaN(Number(values["CAP1_R1330_C" + i]))) {
+            var R1330_C = Number(values["CAP1_R1330_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP1_R1302_C" + i] || 0))) {
+
+            var R1302_C = Decimal(values["CAP1_R1302_C" + i] || 0);
+              
+
+        }
+
+
+        if (R1330_C != R1302_C) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1330_C' + i,
+                'weight': 21,
+                'msg': Drupal.t('Cod eroare: 45-018. [@R1330_C] - Rind.(1330) COL5 = Rind.(1302) pe  @col  -  [@R1302_C]', { '@col': i, '@R1330_C': R1330_C, '@R1302_C': R1302_C })
+            });
+        }
+
+
+    }
+
+
+  //End 45-018
 
 
 
