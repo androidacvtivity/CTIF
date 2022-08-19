@@ -845,8 +845,8 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
             i == 1103 || i == 1104 || i == 1105 || i == 1106 || i == 1107 || i == 1110 || i == 1112 || i == 1113
             || i == 1115 || i == 1117 || i == 1119 || i == 1120 || i == 1121 || i == 1123 || i == 1124 || i == 1125
-            || i == 1127 || i == 1133 || i == 1134 || i == 1135 || i == 1136 || i == 1140 || i == 1213 || i == 1214
-            || i == 1215 || i == 1216 || i == 1218 || i == 1219 || i == 1224 || i == 1225
+            || i == 1127 || i == 1133 || i == 1134 || i == 1135 || i == 1136 || i == 1140 || i == 1213 
+            || i == 1216 || i == 1218 || i == 1219 || i == 1224 || i == 1225
 
         )
             return true;
@@ -1231,6 +1231,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
             .plus(values["CAP1_R1121_C" + i] || 0)
             .plus(values["CAP1_R1123_C" + i] || 0)
             .plus(values["CAP1_R1124_C" + i] || 0)
+            .plus(values["CAP1_R1125_C" + i] || 0)
             .plus(values["CAP1_R1126_C" + i] || 0)
             .plus(values["CAP1_R1127_C" + i] || 0)
             .plus(values["CAP1_R1133_C" + i] || 0)
@@ -1252,6 +1253,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
                 .plus(values["CAP1_R1121_C" + i] || 0)
                 .plus(values["CAP1_R1123_C" + i] || 0)
                 .plus(values["CAP1_R1124_C" + i] || 0)
+                .plus(values["CAP1_R1125_C" + i] || 0)
                 .plus(values["CAP1_R1126_C" + i] || 0)
                 .plus(values["CAP1_R1127_C" + i] || 0)
                 .plus(values["CAP1_R1133_C" + i] || 0)
@@ -1311,15 +1313,15 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
         if (!isNaN(Decimal(values["CAP1_R1234_C" + i] || 0)
-            .plus(values["CAP1_R1234_C" + i] || 0)    
+           
             .plus(values["CAP1_R1235_C" + i] || 0)
             .plus(values["CAP1_R1236_C" + i] || 0)
             .plus(values["CAP1_R1237_C" + i] || 0)
             .plus(values["CAP1_R1238_C" + i] || 0)
             .plus(values["CAP1_R1239_C" + i] || 0))) {
 
-            var SUM_45_010 = Decimal(values["CAP1_R1123_C" + i] || 0)
-                .plus(values["CAP1_R1234_C" + i] || 0)    
+            var SUM_45_010 = Decimal(values["CAP1_R1234_C" + i] || 0)
+               
                 .plus(values["CAP1_R1235_C" + i] || 0)
                 .plus(values["CAP1_R1236_C" + i] || 0)
                 .plus(values["CAP1_R1237_C" + i] || 0)
@@ -1530,10 +1532,63 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
+    //Stat 45 - 013
 
 
+    for (var i = 1; i <= 5; i++) {
+
+        if (fun_col_12(i)) {
+
+            if (!isNaN(Number(values["CAP1_R1244_C" + i]))) {
+                var R1244_C = Number(values["CAP1_R1244_C" + i]);
+            }
 
 
+            if (!isNaN(Decimal(values["CAP1_R1240_C" + i] || 0)
+                .plus(values["CAP1_R1213_C" + i] || 0)
+                .plus(values["CAP1_R1214_C" + i] || 0)
+                .plus(values["CAP1_R1215_C" + i] || 0)
+                .plus(values["CAP1_R1216_C" + i] || 0)
+                .plus(values["CAP1_R1218_C" + i] || 0)
+                .plus(values["CAP1_R1221_C" + i] || 0)
+                .plus(values["CAP1_R1224_C" + i] || 0)
+                .plus(values["CAP1_R1225_C" + i] || 0)
+                .plus(values["CAP1_R1230_C" + i] || 0)
+                .plus(values["CAP1_R1232_C" + i] || 0)
+                .plus(values["CAP1_R1243_C" + i] || 0)
+                
+                )
+
+            ) {
+
+                var SUM_45_013 = Decimal(values["CAP1_R1240_C" + i] || 0)
+                    .plus(values["CAP1_R1213_C" + i] || 0)
+                    .plus(values["CAP1_R1214_C" + i] || 0)
+                    .plus(values["CAP1_R1215_C" + i] || 0)
+                    .plus(values["CAP1_R1216_C" + i] || 0)
+                    .plus(values["CAP1_R1218_C" + i] || 0)
+                    .plus(values["CAP1_R1221_C" + i] || 0)
+                    .plus(values["CAP1_R1224_C" + i] || 0)
+                    .plus(values["CAP1_R1225_C" + i] || 0)
+                    .plus(values["CAP1_R1230_C" + i] || 0)
+                    .plus(values["CAP1_R1232_C" + i] || 0)
+                    .plus(values["CAP1_R1243_C" + i] || 0);
+            }
+
+
+            if (R1244_C != SUM_45_013) {
+                webform.errors.push({
+                    'fieldName': 'CAP1_R1244_C' + i,
+                    'weight': 18,
+                    'msg': Drupal.t('Cod eroare: 45-013. [@R1244_C] - Rind.(1244) = Rind.(1213+1214+1215+1216+1218+1221+1224+1225+1230+1232+1240+1243) @col  -  [@SUM_45_013]', { '@col': i, '@R1244_C': R1244_C, '@SUM_45_013': SUM_45_013 })
+                });
+            }
+        }
+
+    }
+
+
+  //End 45-013
 
 
 
@@ -1781,52 +1836,56 @@ webform.validators.agr29 = function (v, allowOverpass) {
     // End 45-045
     //---------------------------------------------------------
 
-    // //Start 45-015 
+    //Start 45-015 
 
-    // if (!isNaN(Number(values.CAP1_R1328_C1))) {
-    //     var R1328_015 = Number(values.CAP1_R1328_C1);
-    // }
-    // if (!isNaN(toFloat(values.CAP1_R1301_C1))) {
-    //     var R1301_015 = toFloat(values.CAP1_R1301_C1);
-    // }
-    // if (!isNaN(toFloat(values.CAP1_R1302_C1))) {
-    //     var R1302_015 = toFloat(values.CAP1_R1302_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1320_C1))) {
-    //     var R1320_015 = Number(values.CAP1_R1320_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1321_C1))) {
-    //     var R1321_015 = Number(values.CAP1_R1321_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1322_C1))) {
-    //     var R1322_015 = Number(values.CAP1_R1322_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1323_C1))) {
-    //     var R1323_015 = Number(values.CAP1_R1323_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1324_C1))) {
-    //     var R1324_015 = Number(values.CAP1_R1324_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1327_C1))) {
-    //     var R1327_015 = Number(values.CAP1_R1327_C1);
-    // }
-
-
-
-    // var sum_01_27_015 = Math.round(R1301_015 + R1302_015 + R1320_015 + R1321_015 + R1322_015 + R1323_015 + R1324_015 + R1327_015)
-    // if (R1328_015 != sum_01_27_015) {
-    //     webform.warnings.push({
-    //         'fieldName': 'CAP1_R1328_C1',
-
-    //         'weight': 75,
-    //         'msg': Drupal.t('Cod eroare: 45-015.   [@R1328_015] - Rind.(1328) =  Rind.(1301+1302+1320+1321+1322+1323+1324+1327) pe COL1 - [@sum_01_27_015]', { "@R1328_015": R1328_015, "@sum_01_27_015": sum_01_27_015 })
-    //     });
-    // }
+    if (!isNaN(Number(values.CAP1_R1328_C1))) {
+        var R1328_015 = Number(values.CAP1_R1328_C1);
+    }
+    if (!isNaN(toFloat(values.CAP1_R1301_C1))) {
+        var R1301_015 = toFloat(values.CAP1_R1301_C1);
+    }
+    if (!isNaN(toFloat(values.CAP1_R1302_C1))) {
+        var R1302_015 = toFloat(values.CAP1_R1302_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1320_C1))) {
+        var R1320_015 = Number(values.CAP1_R1320_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1321_C1))) {
+        var R1321_015 = Number(values.CAP1_R1321_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1322_C1))) {
+        var R1322_015 = Number(values.CAP1_R1322_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1323_C1))) {
+        var R1323_015 = Number(values.CAP1_R1323_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1324_C1))) {
+        var R1324_015 = Number(values.CAP1_R1324_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1327_C1))) {
+        var R1327_015 = Number(values.CAP1_R1327_C1);
+    }
 
 
 
+     var sum_01_27_015 = Math.round((R1301_015 + R1302_015 + R1320_015 + R1321_015 + R1322_015 + R1323_015 + R1324_015 + R1327_015)*10) / 10
 
-    //End 45-015
+   
+
+
+    if (R1328_015 != sum_01_27_015) {
+        webform.warnings.push({
+            'fieldName': 'CAP1_R1328_C1',
+
+            'weight': 75,
+            'msg': Drupal.t('Cod eroare: 45-015.   [@R1328_015] - Rind.(1328) =  Rind.(1301+1302+1320+1321+1322+1323+1324+1327) pe COL1 - [@sum_01_27_015]', { "@R1328_015": R1328_015, "@sum_01_27_015": sum_01_27_015 })
+        });
+    }
+
+
+
+
+   // End 45-015
 
 
 
