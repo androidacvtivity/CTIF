@@ -845,8 +845,8 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
             i == 1103 || i == 1104 || i == 1105 || i == 1106 || i == 1107 || i == 1110 || i == 1112 || i == 1113
             || i == 1115 || i == 1117 || i == 1119 || i == 1120 || i == 1121 || i == 1123 || i == 1124 || i == 1125
-            || i == 1127 || i == 1133 || i == 1134 || i == 1135 || i == 1136 || i == 1140 || i == 1213 || i == 1214
-            || i == 1215 || i == 1216 || i == 1218 || i == 1219 || i == 1224 || i == 1225
+            || i == 1127 || i == 1133 || i == 1134 || i == 1135 || i == 1136 || i == 1140 || i == 1213 
+            || i == 1216 || i == 1218 || i == 1219 || i == 1224 || i == 1225
 
         )
             return true;
@@ -1231,6 +1231,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
             .plus(values["CAP1_R1121_C" + i] || 0)
             .plus(values["CAP1_R1123_C" + i] || 0)
             .plus(values["CAP1_R1124_C" + i] || 0)
+            .plus(values["CAP1_R1125_C" + i] || 0)
             .plus(values["CAP1_R1126_C" + i] || 0)
             .plus(values["CAP1_R1127_C" + i] || 0)
             .plus(values["CAP1_R1133_C" + i] || 0)
@@ -1252,6 +1253,8 @@ webform.validators.agr29 = function (v, allowOverpass) {
                 .plus(values["CAP1_R1121_C" + i] || 0)
                 .plus(values["CAP1_R1123_C" + i] || 0)
                 .plus(values["CAP1_R1124_C" + i] || 0)
+                .plus(values["CAP1_R1125_C" + i] || 0)
+                .plus(values["CAP1_R1126_C" + i] || 0)
                 .plus(values["CAP1_R1127_C" + i] || 0)
                 .plus(values["CAP1_R1133_C" + i] || 0)
                 .plus(values["CAP1_R1135_C" + i] || 0);
@@ -1270,6 +1273,331 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
     //End 45 - 008
+
+
+
+    // 45 - 007
+
+
+    for (var i = 1; i <= 4; i++) {
+
+
+        if (!isNaN(Number(values["CAP1_R1218_C" + i]))) {
+            var R1218_C = Number(values["CAP1_R1218_C" + i]);
+        }
+
+        if (!isNaN(Number(values["CAP1_R1219_C" + i]))) {
+            var R1219_C = Number(values["CAP1_R1219_C" + i]);
+        }
+
+
+        if (R1218_C < R1219_C) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1218_C' + i,
+                'weight': 12,
+                'msg': Drupal.t('Cod eroare: 45-009. [@R1218_C] - Rind.(1218)>=Rind.(1219) pe coloana  @col  -  [@R1219_C]', { '@col': i, '@R1218_C': R1218_C, '@R1219_C': R1219_C })
+            });
+        }
+    }
+
+    // 45 - 007
+
+
+    //Stat 45 - 010
+
+
+    for (var i = 1; i <= 3; i++) {
+        if (!isNaN(Number(values["CAP1_R1232_C" + i]))) {
+            var R1232_C = Number(values["CAP1_R1232_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP1_R1234_C" + i] || 0)
+           
+            .plus(values["CAP1_R1235_C" + i] || 0)
+            .plus(values["CAP1_R1236_C" + i] || 0)
+            .plus(values["CAP1_R1237_C" + i] || 0)
+            .plus(values["CAP1_R1238_C" + i] || 0)
+            .plus(values["CAP1_R1239_C" + i] || 0))) {
+
+            var SUM_45_010 = Decimal(values["CAP1_R1234_C" + i] || 0)
+               
+                .plus(values["CAP1_R1235_C" + i] || 0)
+                .plus(values["CAP1_R1236_C" + i] || 0)
+                .plus(values["CAP1_R1237_C" + i] || 0)
+                .plus(values["CAP1_R1238_C" + i] || 0)
+                .plus(values["CAP1_R1239_C" + i] || 0);
+        }
+
+
+        if (R1232_C != SUM_45_010) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1232_C' + i,
+                'weight': 14,
+                'msg': Drupal.t('Cod eroare: 45-010. [@R1232_C] - Rind.(1232) = Rind.(1234+1235+1236+1237+1238+1239)   pe coloana. @col  -  [@SUM_45_010]', { '@col': i, '@R1232_C': R1232_C, '@SUM_45_010': SUM_45_010 })
+            });
+        }
+    }
+
+
+
+    //End 45 - 010
+
+
+
+    //Stat 45 - 011
+
+
+    for (var i = 2; i <= 2; i++) {
+        if (!isNaN(Number(values["CAP1_R1240_C" + i]))) {
+            var R1240_C = Number(values["CAP1_R1240_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP1_R1241_C" + i] || 0)
+            .plus(values["CAP1_R1242_C" + i] || 0)
+            
+            
+            )) {
+
+            var SUM_45_011 = Decimal(values["CAP1_R1241_C" + i] || 0)
+                .plus(values["CAP1_R1242_C" + i] || 0);
+            
+        }
+
+
+        if (R1240_C != SUM_45_011) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1240_C' + i,
+                'weight': 15,
+                'msg': Drupal.t('Cod eroare: 45-011. [@R1240_C] - Rind.(1240) = Rind.(1241+1242) COL.2  pe coloana. @col  -  [@SUM_45_011]', { '@col': i, '@R1240_C': R1240_C, '@SUM_45_011': SUM_45_011 })
+            });
+        }
+    }
+
+
+
+    //End 45 - 011
+
+
+    function fun_col_35(col) {
+        var i;
+        i = col;
+        if (
+
+            i == 3 || i == 5 
+           
+
+        )
+            return true;
+
+    }
+
+    function fun_col_12(col) {
+        var i;
+        i = col;
+        if (
+
+            i == 1 || i == 2
+
+
+        )
+            return true;
+
+    }
+
+    //Stat 45 - 012
+
+
+    for (var i = 1; i <= 5; i++) {
+
+        if (fun_col_12(i)) {
+
+        if (!isNaN(toFloat(values["CAP1_R1302_C" + i]))) {
+            var R1302_C = toFloat(values["CAP1_R1302_C" + i]);
+        }
+
+
+            if (!isNaN(Decimal(values["CAP1_R1303_C" + i] || 0)
+                .plus(values["CAP1_R1305_C" + i] || 0)
+                .plus(values["CAP1_R1306_C" + i] || 0)
+                .plus(values["CAP1_R1307_C" + i] || 0)
+                .plus(values["CAP1_R1308_C" + i] || 0)
+                .plus(values["CAP1_R1309_C" + i] || 0)
+                .plus(values["CAP1_R1310_C" + i] || 0)
+                .plus(values["CAP1_R1311_C" + i] || 0)
+                .plus(values["CAP1_R1312_C" + i] || 0)
+                .plus(values["CAP1_R1313_C" + i] || 0)
+                .plus(values["CAP1_R1314_C" + i] || 0)
+                .plus(values["CAP1_R1315_C" + i] || 0)
+                .plus(values["CAP1_R1316_C" + i] || 0)
+                .plus(values["CAP1_R1317_C" + i] || 0)
+                .plus(values["CAP1_R1318_C" + i] || 0)
+                .plus(values["CAP1_R1319_C" + i] || 0))
+
+        ) {
+
+                var SUM_45_012 = Decimal(values["CAP1_R1303_C" + i] || 0)
+                    .plus(values["CAP1_R1305_C" + i] || 0)
+                    .plus(values["CAP1_R1306_C" + i] || 0)
+                    .plus(values["CAP1_R1307_C" + i] || 0)
+                    .plus(values["CAP1_R1308_C" + i] || 0)
+                    .plus(values["CAP1_R1309_C" + i] || 0)
+                    .plus(values["CAP1_R1310_C" + i] || 0)
+                    .plus(values["CAP1_R1311_C" + i] || 0)
+                    .plus(values["CAP1_R1312_C" + i] || 0)
+                    .plus(values["CAP1_R1313_C" + i] || 0)
+                    .plus(values["CAP1_R1314_C" + i] || 0)
+                    .plus(values["CAP1_R1315_C" + i] || 0)
+                    .plus(values["CAP1_R1316_C" + i] || 0)
+                    .plus(values["CAP1_R1317_C" + i] || 0)
+                    .plus(values["CAP1_R1318_C" + i] || 0)
+                    .plus(values["CAP1_R1319_C" + i] || 0);
+        }
+
+
+            if (R1302_C != SUM_45_012) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1302_C' + i,
+                'weight': 16,
+                'msg': Drupal.t('Cod eroare: 45-012. [@R1302_C] - Rind.(1302)=Rind.(1303+1305+1306+1307+1308+1309+1310+1311+1312+1313+1314+1315+1316+1317+1318+1319) pe coloana. @col  -  [@SUM_45_012]', { '@col': i, '@R1302_C': R1302_C.toFixed(1), '@SUM_45_012': SUM_45_012.toFixed(1) })
+            });
+        }
+    }
+
+    }
+
+
+
+
+    for (var i = 1; i <= 5; i++) {
+
+        if (fun_col_35(i)) {
+
+            if (!isNaN(Number(values["CAP1_R1302_C" + i]))) {
+                var R1302_C = Number(values["CAP1_R1302_C" + i]);
+            }
+
+
+            if (!isNaN(Decimal(values["CAP1_R1303_C" + i] || 0)
+                .plus(values["CAP1_R1305_C" + i] || 0)
+                .plus(values["CAP1_R1306_C" + i] || 0)
+                .plus(values["CAP1_R1307_C" + i] || 0)
+                .plus(values["CAP1_R1308_C" + i] || 0)
+                .plus(values["CAP1_R1309_C" + i] || 0)
+                .plus(values["CAP1_R1310_C" + i] || 0)
+                .plus(values["CAP1_R1311_C" + i] || 0)
+                .plus(values["CAP1_R1312_C" + i] || 0)
+                .plus(values["CAP1_R1313_C" + i] || 0)
+                .plus(values["CAP1_R1314_C" + i] || 0)
+                .plus(values["CAP1_R1315_C" + i] || 0)
+                .plus(values["CAP1_R1316_C" + i] || 0)
+                .plus(values["CAP1_R1317_C" + i] || 0)
+                .plus(values["CAP1_R1318_C" + i] || 0)
+                .plus(values["CAP1_R1319_C" + i] || 0))
+
+            ) {
+
+                var SUM_45_012 = Decimal(values["CAP1_R1303_C" + i] || 0)
+                    .plus(values["CAP1_R1305_C" + i] || 0)
+                    .plus(values["CAP1_R1306_C" + i] || 0)
+                    .plus(values["CAP1_R1307_C" + i] || 0)
+                    .plus(values["CAP1_R1308_C" + i] || 0)
+                    .plus(values["CAP1_R1309_C" + i] || 0)
+                    .plus(values["CAP1_R1310_C" + i] || 0)
+                    .plus(values["CAP1_R1311_C" + i] || 0)
+                    .plus(values["CAP1_R1312_C" + i] || 0)
+                    .plus(values["CAP1_R1313_C" + i] || 0)
+                    .plus(values["CAP1_R1314_C" + i] || 0)
+                    .plus(values["CAP1_R1315_C" + i] || 0)
+                    .plus(values["CAP1_R1316_C" + i] || 0)
+                    .plus(values["CAP1_R1317_C" + i] || 0)
+                    .plus(values["CAP1_R1318_C" + i] || 0)
+                    .plus(values["CAP1_R1319_C" + i] || 0);
+            }
+
+
+            if (R1302_C != SUM_45_012) {
+                webform.errors.push({
+                    'fieldName': 'CAP1_R1302_C' + i,
+                    'weight': 17,
+                    'msg': Drupal.t('Cod eroare: 45-012. [@R1302_C] - Rind.(1302)=Rind.(1303+1305+1306+1307+1308+1309+1310+1311+1312+1313+1314+1315+1316+1317+1318+1319) pe coloana. @col  -  [@SUM_45_012]', { '@col': i, '@R1302_C': R1302_C, '@SUM_45_012': SUM_45_012 })
+                });
+            }
+        }
+
+    }
+
+    //End 45 - 012
+
+
+
+    //Stat 45 - 013
+
+
+    for (var i = 1; i <= 5; i++) {
+
+        if (fun_col_12(i)) {
+
+            if (!isNaN(Number(values["CAP1_R1244_C" + i]))) {
+                var R1244_C = Number(values["CAP1_R1244_C" + i]);
+            }
+
+
+            if (!isNaN(Decimal(values["CAP1_R1240_C" + i] || 0)
+                .plus(values["CAP1_R1213_C" + i] || 0)
+                .plus(values["CAP1_R1214_C" + i] || 0)
+                .plus(values["CAP1_R1215_C" + i] || 0)
+                .plus(values["CAP1_R1216_C" + i] || 0)
+                .plus(values["CAP1_R1218_C" + i] || 0)
+                .plus(values["CAP1_R1221_C" + i] || 0)
+                .plus(values["CAP1_R1224_C" + i] || 0)
+                .plus(values["CAP1_R1225_C" + i] || 0)
+                .plus(values["CAP1_R1230_C" + i] || 0)
+                .plus(values["CAP1_R1232_C" + i] || 0)
+                .plus(values["CAP1_R1243_C" + i] || 0)
+                
+                )
+
+            ) {
+
+                var SUM_45_013 = Decimal(values["CAP1_R1240_C" + i] || 0)
+                    .plus(values["CAP1_R1213_C" + i] || 0)
+                    .plus(values["CAP1_R1214_C" + i] || 0)
+                    .plus(values["CAP1_R1215_C" + i] || 0)
+                    .plus(values["CAP1_R1216_C" + i] || 0)
+                    .plus(values["CAP1_R1218_C" + i] || 0)
+                    .plus(values["CAP1_R1221_C" + i] || 0)
+                    .plus(values["CAP1_R1224_C" + i] || 0)
+                    .plus(values["CAP1_R1225_C" + i] || 0)
+                    .plus(values["CAP1_R1230_C" + i] || 0)
+                    .plus(values["CAP1_R1232_C" + i] || 0)
+                    .plus(values["CAP1_R1243_C" + i] || 0);
+            }
+
+
+            if (R1244_C != SUM_45_013) {
+                webform.errors.push({
+                    'fieldName': 'CAP1_R1244_C' + i,
+                    'weight': 18,
+                    'msg': Drupal.t('Cod eroare: 45-013. [@R1244_C] - Rind.(1244) = Rind.(1213+1214+1215+1216+1218+1221+1224+1225+1230+1232+1240+1243) @col  -  [@SUM_45_013]', { '@col': i, '@R1244_C': R1244_C, '@SUM_45_013': SUM_45_013 })
+                });
+            }
+        }
+
+    }
+
+
+  //End 45-013
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1508,52 +1836,56 @@ webform.validators.agr29 = function (v, allowOverpass) {
     // End 45-045
     //---------------------------------------------------------
 
-    // //Start 45-015 
+    //Start 45-015 
 
-    // if (!isNaN(Number(values.CAP1_R1328_C1))) {
-    //     var R1328_015 = Number(values.CAP1_R1328_C1);
-    // }
-    // if (!isNaN(toFloat(values.CAP1_R1301_C1))) {
-    //     var R1301_015 = toFloat(values.CAP1_R1301_C1);
-    // }
-    // if (!isNaN(toFloat(values.CAP1_R1302_C1))) {
-    //     var R1302_015 = toFloat(values.CAP1_R1302_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1320_C1))) {
-    //     var R1320_015 = Number(values.CAP1_R1320_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1321_C1))) {
-    //     var R1321_015 = Number(values.CAP1_R1321_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1322_C1))) {
-    //     var R1322_015 = Number(values.CAP1_R1322_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1323_C1))) {
-    //     var R1323_015 = Number(values.CAP1_R1323_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1324_C1))) {
-    //     var R1324_015 = Number(values.CAP1_R1324_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1327_C1))) {
-    //     var R1327_015 = Number(values.CAP1_R1327_C1);
-    // }
-
-
-
-    // var sum_01_27_015 = Math.round(R1301_015 + R1302_015 + R1320_015 + R1321_015 + R1322_015 + R1323_015 + R1324_015 + R1327_015)
-    // if (R1328_015 != sum_01_27_015) {
-    //     webform.warnings.push({
-    //         'fieldName': 'CAP1_R1328_C1',
-
-    //         'weight': 75,
-    //         'msg': Drupal.t('Cod eroare: 45-015.   [@R1328_015] - Rind.(1328) =  Rind.(1301+1302+1320+1321+1322+1323+1324+1327) pe COL1 - [@sum_01_27_015]', { "@R1328_015": R1328_015, "@sum_01_27_015": sum_01_27_015 })
-    //     });
-    // }
+    if (!isNaN(Number(values.CAP1_R1328_C1))) {
+        var R1328_015 = Number(values.CAP1_R1328_C1);
+    }
+    if (!isNaN(toFloat(values.CAP1_R1301_C1))) {
+        var R1301_015 = toFloat(values.CAP1_R1301_C1);
+    }
+    if (!isNaN(toFloat(values.CAP1_R1302_C1))) {
+        var R1302_015 = toFloat(values.CAP1_R1302_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1320_C1))) {
+        var R1320_015 = Number(values.CAP1_R1320_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1321_C1))) {
+        var R1321_015 = Number(values.CAP1_R1321_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1322_C1))) {
+        var R1322_015 = Number(values.CAP1_R1322_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1323_C1))) {
+        var R1323_015 = Number(values.CAP1_R1323_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1324_C1))) {
+        var R1324_015 = Number(values.CAP1_R1324_C1);
+    }
+    if (!isNaN(Number(values.CAP1_R1327_C1))) {
+        var R1327_015 = Number(values.CAP1_R1327_C1);
+    }
 
 
 
+     var sum_01_27_015 = Math.round((R1301_015 + R1302_015 + R1320_015 + R1321_015 + R1322_015 + R1323_015 + R1324_015 + R1327_015)*10) / 10
 
-    //End 45-015
+   
+
+
+    if (R1328_015 != sum_01_27_015) {
+        webform.warnings.push({
+            'fieldName': 'CAP1_R1328_C1',
+
+            'weight': 75,
+            'msg': Drupal.t('Cod eroare: 45-015.   [@R1328_015] - Rind.(1328) =  Rind.(1301+1302+1320+1321+1322+1323+1324+1327) pe COL1 - [@sum_01_27_015]', { "@R1328_015": R1328_015, "@sum_01_27_015": sum_01_27_015 })
+        });
+    }
+
+
+
+
+   // End 45-015
 
 
 
