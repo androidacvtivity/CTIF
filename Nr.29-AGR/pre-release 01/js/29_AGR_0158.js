@@ -1215,6 +1215,46 @@ webform.validators.agr29 = function (v, allowOverpass) {
     //End 45 - 023
 
 
+    //Stat 45 - 024
+
+
+    for (var i = 1; i <= 1; i++) {
+        if (!isNaN(Number(values["CAP1_R1440_C" + i]))) {
+            var R1440 = Number(values["CAP1_R1440_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP1_R1140_C" + i] || 0)
+            .plus(values["CAP1_R1244_C" + i] || 0)
+            .plus(values["CAP1_R1328_C" + i] || 0)
+            .plus(values["CAP1_R1434_C" + i] || 0)
+           
+
+        )) {
+
+            var SUM_45_024 = Decimal(values["CAP1_R1140_C" + i] || 0)
+                .plus(values["CAP1_R1244_C" + i] || 0)
+                .plus(values["CAP1_R1328_C" + i] || 0)
+                .plus(values["CAP1_R1434_C" + i] || 0)
+               
+
+                ;
+        }
+
+
+        if (R1440 != SUM_45_024) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1440_C' + i,
+                'weight': 24,
+                'msg': Drupal.t('Cod eroare: 45-024. [@R1440] - Rind.(1440) COL1 = Rind.(1140+1244+1328+1434) pe coloana  @col  -  [@SUM_45_024]', { '@col': i, '@R1440': R1440, '@SUM_45_024': SUM_45_024 })
+            });
+        }
+    }
+
+
+
+    //End 45 - 024
+
     // 45 - 007
 
 
