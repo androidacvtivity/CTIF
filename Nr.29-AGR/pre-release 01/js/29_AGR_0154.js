@@ -176,96 +176,96 @@ webform.validators.agr29 = function (v, allowOverpass) {
     //     var R1442_C1 = Number(values.CAP1_R1442_C1);
     // }
 
-    // if (!isNaN(Number(values.CAP1_R1411_C1))) {
-    //     var R1411_C1 = Number(values.CAP1_R1411_C1);
-    // }
+    if (!isNaN(Number(values.CAP1_R1411_C1))) {
+        var R1411_C1 = Number(values.CAP1_R1411_C1);
+    }
 
 
-    // if (!isNaN(Number(values.CAP1_R1412_C2))) {
-    //     var R1412_C2 = Number(values.CAP1_R1412_C2);
-    // }
+    if (!isNaN(Number(values.CAP1_R1412_C2))) {
+        var R1412_C2 = Number(values.CAP1_R1412_C2);
+    }
 
 
-    // if (!isNaN(Number(values.CAP1_R1413_C2))) {
-    //     var R1413_C2 = Number(values.CAP1_R1413_C2);
-    // }
+    if (!isNaN(Number(values.CAP1_R1413_C2))) {
+        var R1413_C2 = Number(values.CAP1_R1413_C2);
+    }
 
 
-    // if (!isNaN(Number(values.CAP1_R1414_C2))) {
-    //     var R1414_C2 = Number(values.CAP1_R1414_C2);
-    // }
-
-
-
-
-    // if (!isNaN(Number(values.CAP1_R1415_C2))) {
-    //     var R1415_C2 = Number(values.CAP1_R1415_C2);
-    // }
-
-    // if (!isNaN(Number(values.CAP1_R1630_C1))) {
-    //     var R1630_C1 = Number(values.CAP1_R1630_C1);
-    // }
-
-
-    // if (!isNaN(Number(values.CAP1_R1631_C1))) {
-    //     var R1631_C1 = Number(values.CAP1_R1631_C1);
-    // }
-
-
-    // if (!isNaN(Number(values.CAP1_R1501_C2))) {
-    //     var R1501_C2 = Number(values.CAP1_R1501_C2);
-    // }
-
-
-    // if (!isNaN(Number(values.CAP1_R1502_C2))) {
-    //     var R1502_C2 = Number(values.CAP1_R1502_C2);
-    // }
+    if (!isNaN(Number(values.CAP1_R1414_C2))) {
+        var R1414_C2 = Number(values.CAP1_R1414_C2);
+    }
 
 
 
-    // if (!isNaN(Number(values.CAP2_R2100_C1))) {
-    //     var R2100_C1 = Number(values.CAP2_R2100_C1);
-    // }
 
-    // if (!isNaN(Number(values.CAP2_R2110_C1))) {
-    //     var R2110_C1 = Number(values.CAP2_R2110_C1);
-    // }
+    if (!isNaN(Number(values.CAP1_R1415_C2))) {
+        var R1415_C2 = Number(values.CAP1_R1415_C2);
+    }
 
-    // if (!isNaN(Number(values.CAP2_R2120_C1))) {
-    //     var R2120_C1 = Number(values.CAP2_R2120_C1);
-    // }
+    if (!isNaN(Number(values.CAP1_R1630_C1))) {
+        var R1630_C1 = Number(values.CAP1_R1630_C1);
+    }
 
 
-
-    // if (!isNaN(Number(values.CAP2_R2200_C1))) {
-    //     var R2200_C1 = Number(values.CAP2_R2200_C1);
-    // }
-
-    // if (!isNaN(Number(values.CAP2_R2300_C1))) {
-    //     var R2300_C1 = Number(values.CAP2_R2300_C1);
-    // }
+    if (!isNaN(Number(values.CAP1_R1631_C1))) {
+        var R1631_C1 = Number(values.CAP1_R1631_C1);
+    }
 
 
-    // if (!isNaN(Number(values.CAP1_R1418_C1))) {
-    //     var R1418_C1 = Number(values.CAP1_R1418_C1);
-    // }
-
-    // if (!isNaN(Number(values.CAP1_R1419_C2))) {
-    //     var R1419_C2 = Number(values.CAP1_R1419_C2);
-    // }
+    if (!isNaN(Number(values.CAP1_R1501_C2))) {
+        var R1501_C2 = Number(values.CAP1_R1501_C2);
+    }
 
 
-    // if (!isNaN(Number(values.CAP1_R1420_C2))) {
-    //     var R1420_C2 = Number(values.CAP1_R1420_C2);
-    // }
+    if (!isNaN(Number(values.CAP1_R1502_C2))) {
+        var R1502_C2 = Number(values.CAP1_R1502_C2);
+    }
 
-    // if (!isNaN(Number(values.CAP1_R1421_C2))) {
-    //     var R1421_C2 = Number(values.CAP1_R1421_C2);
-    // }
 
-    // if (!isNaN(Number(values.CAP1_R1422_C1))) {
-    //     var R1422_C1 = Number(values.CAP1_R1422_C1);
-    // }
+
+    if (!isNaN(Number(values.CAP2_R2100_C1))) {
+        var R2100_C1 = Number(values.CAP2_R2100_C1);
+    }
+
+    if (!isNaN(Number(values.CAP2_R2110_C1))) {
+        var R2110_C1 = Number(values.CAP2_R2110_C1);
+    }
+
+    if (!isNaN(Number(values.CAP2_R2120_C1))) {
+        var R2120_C1 = Number(values.CAP2_R2120_C1);
+    }
+
+
+
+    if (!isNaN(Number(values.CAP2_R2200_C1))) {
+        var R2200_C1 = Number(values.CAP2_R2200_C1);
+    }
+
+    if (!isNaN(Number(values.CAP2_R2300_C1))) {
+        var R2300_C1 = Number(values.CAP2_R2300_C1);
+    }
+
+
+    if (!isNaN(Number(values.CAP1_R1418_C1))) {
+        var R1418_C1 = Number(values.CAP1_R1418_C1);
+    }
+
+    if (!isNaN(Number(values.CAP1_R1419_C2))) {
+        var R1419_C2 = Number(values.CAP1_R1419_C2);
+    }
+
+
+    if (!isNaN(Number(values.CAP1_R1420_C2))) {
+        var R1420_C2 = Number(values.CAP1_R1420_C2);
+    }
+
+    if (!isNaN(Number(values.CAP1_R1421_C2))) {
+        var R1421_C2 = Number(values.CAP1_R1421_C2);
+    }
+
+    if (!isNaN(Number(values.CAP1_R1422_C1))) {
+        var R1422_C1 = Number(values.CAP1_R1422_C1);
+    }
 
 
 
@@ -290,15 +290,15 @@ webform.validators.agr29 = function (v, allowOverpass) {
     // }
 
 
+    var SUM_45_019 = R1412_C2 + R1413_C2 + R1414_C2 + R1415_C2
 
-
-    // if (R1411_C1 < (R1412_C2 + R1413_C2 + R1414_C2 + R1415_C2)) {
-    //     webform.errors.push({
-    //         'fieldName': 'CAP1_R1411_C1',
-    //         'weight': 9,
-    //         'msg': Drupal.t('Cod eroare: 45-019. Rind.(1411) COL1>=Rind.(1412+1413+1414+1415) pe COL2')
-    //     });
-    // }
+    if (R1411_C1 < SUM_45_019) {
+        webform.errors.push({
+            'fieldName': 'CAP1_R1411_C1',
+            'weight': 22,
+            'msg': Drupal.t('Cod eroare: 45-019. [@R1411_C1]- Rind.(1411) COL1> = Rind.(1412+1413+1414+1415) pe COL2 - [@SUM_45_019] ', { "@R1411_C1": R1411_C1, "@SUM_45_019": SUM_45_019 })
+        });
+    }
 
 
 
