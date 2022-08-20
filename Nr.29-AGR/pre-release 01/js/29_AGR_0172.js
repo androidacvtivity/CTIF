@@ -26,90 +26,6 @@ webform.validators.agr29 = function (v, allowOverpass) {
     var values = Drupal.settings.mywebform.values;
 
 
-    // //45 - 009
-    // for (var i = 1; i <= 4; i++) {
-    //     var R1218_C = Number(values["CAP1_R1218_C" + i]);
-    //     var R1219_C = Number(values["CAP1_R1219_C" + i]);
-    //     if (R1218_C < R1219_C) {
-    //         webform.errors.push({
-    //             'fieldName': 'CAP1_R1218_C' + i,
-    //             'weight': 2,
-    //             'msg': Drupal.t('Cod eroare: 45-009. Rind.(1218)>=Rind.(1219)  pe coloana.@col', { '@col': i })
-    //         });
-    //     }
-    // }
-    // //45 - 009
-
-
-    // // 45-028
-    //     for (var i = 1; i <= 5; i++) {
-    //         var R2120_C = Number(values["CAP2_R2120_C" + i]);
-    //         var R2121_C = Number(values["CAP2_R2121_C" + i]);
-    //         if (R2120_C < R2121_C) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R2120_C' + i,
-    //                 'weight': 3,
-    //                 'msg': Drupal.t('Cod eroare: 45-028. Rind.(2120)>=Rind.(2121)  pe coloana.@col', { '@col': i })
-    //             });
-    //         }
-    //     }
-
-    // //45-028
-
-
-    // //45-036
-    //     for (var i = 1; i <= 2; i++) {
-    //         var R1630_C = Number(values["CAP1_R1630_C" + i]);
-    //         var R1631_C = Number(values["CAP1_R1631_C" + i]);
-    //         if (R1630_C < R1631_C) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R1630_C' + i,
-    //                 'weight': 4,
-    //                 'msg': Drupal.t('Cod eroare: 45-036. Rind.1630 >= Rind.1631  pe coloana.@col', { '@col': i })
-    //             });
-    //         }
-    //     }
-    // //45-036
-
-
-    // //45-028
-
-    //     for (var i = 1; i <= 2; i++) {
-    //         var R1701_C = Number(values["CAP1A_R1701_C" + i]);
-    //         var R1702_C_SUM = Decimal(values["CAP1A_R1702_C" + i] || 0)
-    //             .plus(values["CAP1A_R1703_C" + i] || 0)
-    //             .plus(values["CAP1A_R1704_C" + i] || 0);
-    //         if (R1701_C < R1702_C_SUM) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1A_R1701_C' + i,
-    //                 'weight': 5,
-    //                 'msg': Drupal.t('Cod eroare: 45-028.  Rind.(1701)>=Rind.(1702+1703+1704) pe coloana.@col', { '@col': i })
-    //             });
-    //         }
-    //     }
-
-    //     //45-028
-
-
-    // //45-037
-
-    //     for (var i = 1; i <= 2; i++) {
-    //         var R1116_C = Number(values["CAP1_R1116_C" + i]);
-    //         var R1117_C = Number(values["CAP1_R1117_C" + i]);
-    //         if (R1116_C != R1117_C) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R1116_C' + i,
-    //                 'weight': 6,
-    //                 'msg': Drupal.t('Cod eroare: 45-037. Rind.1116 col.1,2 = Rind.1117  pe coloana.@col', { '@col': i })
-    //             });
-    //         }
-    //     }
-
-    //     //45-037
-
-
-
-
 
     if (!isNaN(Number(values.CAP1_R1242_C3))) {
         var R1242_C3 = Number(values.CAP1_R1242_C3);
@@ -281,13 +197,6 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-    // if (R1630_C1 < (R1631_C1 + R1501_C2 + R1502_C2 + R2100_C1 + R2110_C1 + R2120_C1 + R2200_C1 + R2300_C1)) {
-    //     webform.errors.push({
-    //         'fieldName': 'CAP1_R1630_C1',
-    //         'weight': 8,
-    //         'msg': Drupal.t('Cod eroare: 45-040. Rind.1630 col.1 >= rind.1631 col.1 + rind.(1501+1502) col.2 + rind.(2100 + 2110 + 2120 + 2200 + 2300) col.1')
-    //     });
-    // }
 
 
     var SUM_45_019 = R1412_C2 + R1413_C2 + R1414_C2 + R1415_C2
@@ -347,480 +256,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
     }
 
 
-
-
-
-
-
-
-
-    // Start 45-031
-    // for (var i = 0; i < 5; i++) {
-    //     if (i != 7 && i != 9) {
-    //         var col1 = Number(values["CAP2_R21" + (i < 5 ? ('0' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP2_R21" + (i < 5 ? ('0' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R21' + (i < 5 ? ('0' + i) : i) + '_C1',
-    //                 'weight': 18,
-    //                 'msg': Drupal.t('Cod eroare: 45-031 Rind.(2100 + … PÎNĂ LA  2302) COL1 >= Rind.(2100 + … PÎNĂ LA  2302) COL2 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    // for (var i = 0; i < 7; i++) {
-    //     if (i != 8 && i != 9) {
-    //         var col1 = Number(values["CAP2_R21" + (i < 7 ? ('1' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP2_R21" + (i < 7 ? ('1' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R21' + (i < 7 ? ('1' + i) : i) + '_C1',
-    //                 'weight': 19,
-    //                 'msg': Drupal.t('Cod eroare: 45-031 Rind.(2100 + … PÎNĂ LA  2302) COL1 >= Rind.(2100 + … PÎNĂ LA  2302) COL2 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    // for (var i = 0; i < 2; i++) {
-    //     if (i != 8 && i != 9) {
-    //         var col1 = Number(values["CAP2_R212" + (i < 2 ? (+ i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP2_R212" + (i < 2 ? (+ i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R212' + (i < 2 ? (+ i) : i) + '_C1',
-    //                 'weight': 20,
-    //                 'msg': Drupal.t('Cod eroare: 45-031 Rind.(2100 + … PÎNĂ LA  2302) COL1 >= Rind.(2100 + … PÎNĂ LA  2302) COL2 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    // for (var i = 0; i < 11; i++) {
-    //     {
-    //         var col1 = Number(values["CAP2_R220" + (i < 11 ? (+i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP2_R220" + (i < 11 ? (+i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R220' + (i < 11 ? (+i) : i) + '_C1',
-    //                 'weight': 21,
-    //                 'msg': Drupal.t('Cod eroare: 45-031 Rind.(2100 + … PÎNĂ LA  2302) COL1 >= Rind.(2100 + … PÎNĂ LA  2302) COL2 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-    // for (var i = 0; i < 4; i++) {
-    //     {
-    //         var col1 = Number(values["CAP2_R23" + (i < 4 ? ('0' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP2_R23" + (i < 4 ? ('0' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R23' + (i < 4 ? ('0' + i) : i) + '_C1',
-    //                 'weight': 22,
-    //                 'msg': Drupal.t('Cod eroare: 45-031 Rind.(2100 + … PÎNĂ LA  2302) COL1 >= Rind.(2100 + … PÎNĂ LA  2302) COL2 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-    // End  45-031
-
-
-
-    // Start 45-032
-    // for (var i = 0; i < 5; i++) {
-    //     if (i != 7 && i != 9) {
-    //         var col1 = Number(values["CAP2_R21" + (i < 5 ? ('0' + i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP2_R21" + (i < 5 ? ('0' + i) : i) + "_C4"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R21' + (i < 5 ? ('0' + i) : i) + '_C3',
-    //                 'weight': 23,
-    //                 'msg': Drupal.t('Cod eroare: 45-031 Rind.(2100 + … PÎNĂ LA  2302) COL3 >= Rind.(2100 + … PÎNĂ LA  2302) COL4 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    // for (var i = 0; i < 7; i++) {
-    //     if (i != 8 && i != 9) {
-    //         var col1 = Number(values["CAP2_R21" + (i < 7 ? ('1' + i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP2_R21" + (i < 7 ? ('1' + i) : i) + "_C4"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R21' + (i < 7 ? ('1' + i) : i) + '_C3',
-    //                 'weight': 24,
-    //                 'msg': Drupal.t('Cod eroare: 45-031 Rind.(2100 + … PÎNĂ LA  2302) COL3 >= Rind.(2100 + … PÎNĂ LA  2302) COL4 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    // for (var i = 0; i < 2; i++) {
-    //     if (i != 8 && i != 9) {
-    //         var col1 = Number(values["CAP2_R212" + (i < 2 ? (+ i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP2_R212" + (i < 2 ? (+ i) : i) + "_C4"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R212' + (i < 2 ? (+ i) : i) + '_C3',
-    //                 'weight': 25,
-    //                 'msg': Drupal.t('Cod eroare: 45-031 Rind.(2100 + … PÎNĂ LA  2302) COL3 >= Rind.(2100 + … PÎNĂ LA  2302) COL4 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    // for (var i = 0; i < 11; i++) {
-    //     {
-    //         var col1 = Number(values["CAP2_R220" + (i < 11 ? (+i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP2_R220" + (i < 11 ? (+i) : i) + "_C4"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R220' + (i < 11 ? (+i) : i) + '_C3',
-    //                 'weight': 26,
-    //                 'msg': Drupal.t('Cod eroare: 45-031 Rind.(2100 + … PÎNĂ LA  2302) COL3 >= Rind.(2100 + … PÎNĂ LA  2302) COL4 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-    // for (var i = 0; i < 4; i++) {
-    //     {
-    //         var col1 = Number(values["CAP2_R23" + (i < 4 ? ('0' + i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP2_R23" + (i < 4 ? ('0' + i) : i) + "_C4"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R23' + (i < 4 ? ('0' + i) : i) + '_C3',
-    //                 'weight': 27,
-    //                 'msg': Drupal.t('Cod eroare: 45-031 Rind.(2100 + … PÎNĂ LA  2302) COL3 >= Rind.(2100 + … PÎNĂ LA  2302) COL4 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-    // End  45-032
-
-
-
-
-    // // Start 45-003
-
-    // for (var i = 3; i < 8; i++) {
-    //     {
-    //         var col1 = Number(values["CAP1_R11" + (i < 8 ? ('0' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R11" + (i < 8 ? ('0' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R11' + (i < 8 ? ('0' + i) : i) + '_C1',
-    //                 'weight': 28,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    // for (var i = 0; i <= 9; i++) {
-    //     {
-    //         if (i != 1 && i != 4 && i != 8)
-    //             var col1 = Number(values["CAP1_R11" + (i <= 9 ? ('1' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R11" + (i <= 9 ? ('1' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R11' + (i <= 9 ? ('1' + i) : i) + '_C1',
-    //                 'weight': 29,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-    // for (var i = 0; i <= 9; i++) {
-    //     {
-    //         if (i != 2 && i != 9 && i != 8)
-    //             var col1 = Number(values["CAP1_R11" + (i <= 9 ? ('2' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R11" + (i <= 9 ? ('2' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R11' + (i <= 9 ? ('2' + i) : i) + '_C1',
-    //                 'weight': 30,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // for (var i = 3; i <= 6; i++) {
-    //     {
-
-    //         var col1 = Number(values["CAP1_R11" + (i <= 6 ? ('3' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R11" + (i <= 6 ? ('3' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R11' + (i <= 6 ? ('3' + i) : i) + '_C1',
-    //                 'weight': 31,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-    // for (var i = 0; i < 1; i++) {
-    //     {
-
-    //         var col1 = Number(values["CAP1_R11" + (i < 1 ? ('4' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R11" + (i < 1 ? ('4' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R11' + (i < 1 ? ('4' + i) : i) + '_C1',
-    //                 'weight': 32,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-    // for (var i = 3; i <= 9; i++) {
-    //     {
-    //         if (i != 7)
-    //             var col1 = Number(values["CAP1_R12" + (i <= 9 ? ('1' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R12" + (i <= 9 ? ('1' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R12' + (i <= 9 ? ('1' + i) : i) + '_C1',
-    //                 'weight': 33,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // for (var i = 1; i <= 5; i++) {
-    //     {
-    //         if (i != 3)
-    //             var col1 = Number(values["CAP1_R12" + (i <= 5 ? ('2' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R12" + (i <= 5 ? ('2' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R12' + (i <= 5 ? ('2' + i) : i) + '_C1',
-    //                 'weight': 34,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // for (var i = 0; i <= 8; i++) {
-    //     {
-    //         if (i != 3 && i != 1)
-    //             var col1 = Number(values["CAP1_R12" + (i <= 8 ? ('3' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R12" + (i <= 8 ? ('3' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R12' + (i <= 8 ? ('3' + i) : i) + '_C1',
-    //                 'weight': 35,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-    // for (var i = 0; i < 1; i++) {
-    //     {
-
-    //         var col1 = Number(values["CAP1_R12" + (i < 1 ? ('4' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R12" + (i < 1 ? ('4' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R12' + (i < 1 ? ('4' + i) : i) + '_C1',
-    //                 'weight': 36,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // for (var i = 2; i <= 9; i++) {
-    //     {
-    //         if (i != 4)
-    //             var col1 = Number(values["CAP1_R13" + (i <= 9 ? ('0' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R13" + (i <= 9 ? ('0' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R13' + (i <= 9 ? ('0' + i) : i) + '_C1',
-    //                 'weight': 37,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // for (var i = 0; i <= 9; i++) {
-    //     {
-
-    //         var col1 = Number(values["CAP1_R13" + (i <= 9 ? ('1' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R13" + (i <= 9 ? ('1' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R13' + (i <= 9 ? ('1' + i) : i) + '_C1',
-    //                 'weight': 38,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // for (var i = 0; i <= 7; i++) {
-    //     {
-
-    //         var col1 = Number(values["CAP1_R13" + (i <= 7 ? ('2' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R13" + (i <= 7 ? ('2' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R13' + (i <= 7 ? ('2' + i) : i) + '_C1',
-    //                 'weight': 39,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-    // for (var i = 1; i <= 9; i++) {
-    //     {
-    //         if (i != 7 && i != 8)
-    //             var col1 = Number(values["CAP1_R14" + (i <= 9 ? ('0' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP1_R14" + (i <= 9 ? ('0' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R14' + (i <= 9 ? ('0' + i) : i) + '_C1',
-    //                 'weight': 40,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-    // for (var i = 1; i <= 3; i++) {
-    //     {
-
-    //         var col1 = Number(values["CAP2_R21" + (i <= 3 ? ('0' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP2_R21" + (i <= 3 ? ('0' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R21' + (i <= 3 ? ('0' + i) : i) + '_C1',
-    //                 'weight': 41,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // for (var i = 1; i <= 1; i++) {
-    //     {
-
-    //         var col1 = Number(values["CAP2_R22" + (i <= 1 ? ('0' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP2_R22" + (i <= 1 ? ('0' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R22' + (i <= 1 ? ('0' + i) : i) + '_C1',
-    //                 'weight': 42,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    // for (var i = 1; i <= 2; i++) {
-    //     {
-
-
-
-    //         var col1 = Number(values["CAP2_R23" + (i <= 2 ? ('0' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP2_R23" + (i <= 2 ? ('0' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R23' + (i <= 2 ? ('0' + i) : i) + '_C1',
-    //                 'weight': 43,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    // for (var i = 1; i <= 2; i++) {
-    //     {
-
-
-
-    //         var col1 = Number(values["CAP2_R23" + (i <= 2 ? ('0' + i) : i) + "_C1"]);
-    //         var col2 = Number(values["CAP2_R23" + (i <= 2 ? ('0' + i) : i) + "_C2"]);
-
-    //         if (col1 < col2) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R23' + (i <= 2 ? ('0' + i) : i) + '_C1',
-    //                 'weight': 44,
-    //                 'msg': Drupal.t('Cod eroare: 45-003 [@col1]  -  Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL1 >= Rind.(1103-1238,1240,1302-1327,1401-1409,2101-2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // // End 45-003
-
-    //---------------------------------------------------------------------
+  
 
 
     // Start function 
@@ -1082,7 +518,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
     // End 45-003
 
-    //Start 45 - 005
+    // Start 45 - 005
     function row_45_005_CAP1(row) {
         var i;
         i = row;
@@ -1126,7 +562,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
     //End 45 - 005
 
 
-    //Stat 45 - 006
+    //Start 45 - 006
 
 
     for (var i = 1; i <= 5; i++) {
@@ -1166,7 +602,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-    //Stat 45 - 023
+    //Start 45 - 023
 
 
     for (var i = 1; i <= 1; i++) {
@@ -1215,7 +651,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
     //End 45 - 023
 
 
-    //Stat 45 - 024
+    //Start 45 - 024
 
 
     for (var i = 1; i <= 1; i++) {
@@ -1256,7 +692,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
     //End 45 - 024
 
 
-    //Stat 45 - 025
+    //Start 45 - 025
 
 
     for (var i = 1; i <= 2; i++) {
@@ -1286,20 +722,60 @@ webform.validators.agr29 = function (v, allowOverpass) {
         if (R1701 < SUM_45_025) {
             webform.errors.push({
                 'fieldName': 'CAP1A_R1701_C' + i,
-                'weight': 26,
+                'weight': 25,
                 'msg': Drupal.t('Cod eroare: 45-025. [@R1701] - Rind.(1701)>=Rind.(1702+1703+1704)  pe coloana  @col  -  [@SUM_45_025]', { '@col': i, '@R1701': R1701, '@SUM_45_025': SUM_45_025 })
             });
         }
     }
+//Start
 
 
 
     //End 45 - 025
 
 
+    //Start 45 - 026
 
 
-    //Stat 45 - 027
+    for (var i = 1; i <= 4; i++) {
+        if (!isNaN(Number(values["CAP2_R2100_C" + i]))) {
+            var R2100 = Number(values["CAP2_R2100_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP2_R2101_C" + i] || 0)
+            .plus(values["CAP2_R2102_C" + i] || 0)
+            .plus(values["CAP2_R2103_C" + i] || 0)
+            .plus(values["CAP2_R2104_C" + i] || 0)
+           
+        )) {
+
+            var SUM_45_026 = Decimal(values["CAP2_R2101_C" + i] || 0)
+                .plus(values["CAP2_R2102_C" + i] || 0)
+                .plus(values["CAP2_R2103_C" + i] || 0)
+                .plus(values["CAP2_R2104_C" + i] || 0)
+               
+
+                ;
+        }
+
+
+        if (R2100 != SUM_45_026) {
+            webform.errors.push({
+                'fieldName': 'CAP2_R2100_C' + i,
+                'weight': 26,
+                'msg': Drupal.t('Cod eroare: 45-026. [@R2100] - Rind.(2100)=Rind.(2101+2102+2103+2104)  pe coloana  @col  -  [@SUM_45_026]', { '@col': i, '@R2100': R2100, '@SUM_45_026': SUM_45_026 })
+            });
+        }
+    }
+
+
+ //End 45 - 026
+
+    
+
+
+    //Start 45 - 027
 
 
     for (var i = 1; i <= 4; i++) {
@@ -1341,10 +817,9 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
  //End 45 - 027
+    
 
 
-    
-    
 
 
 
@@ -1378,7 +853,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-    //Stat 45 - 008
+    //Start 45 - 008
 
 
     for (var i = 1; i <= 5; i++) {
@@ -1443,8 +918,6 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
     //End 45 - 008
 
-
-
     // 45 - 007
 
 
@@ -1472,7 +945,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
     // 45 - 007
 
 
-    //Stat 45 - 010
+    //Start  45 - 010
 
 
     for (var i = 1; i <= 3; i++) {
@@ -1514,7 +987,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-    //Stat 45 - 011
+    //Start 45 - 011
 
 
     for (var i = 2; i <= 2; i++) {
@@ -1589,7 +1062,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
     }
 
-    //Stat 45 - 012
+    //Start 45 - 012
 
 
     for (var i = 1; i <= 5; i++) {
@@ -1715,7 +1188,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-    //Stat 45 - 013
+    //Start 45 - 013
 
 
     for (var i = 1; i <= 5; i++) {
@@ -1771,12 +1244,9 @@ webform.validators.agr29 = function (v, allowOverpass) {
     }
 
 
-  //End 45-013
+//End 45-013
 
-
-
-
-    //Stat 45 - 014
+//Start 45 - 014
 
 
     for (var i = 1; i <= 5; i++) {
@@ -1820,7 +1290,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-    //Stat 45 - 017
+    //Start 45 - 017
 
 
     for (var i = 3; i <= 3; i++) {
@@ -1853,12 +1323,9 @@ webform.validators.agr29 = function (v, allowOverpass) {
     }
 
 
-  //End 45-017
+//End 45-017
 
-
-
-
-    //Stat 45 - 018
+ //Start 45 - 018
 
 
     for (var i = 5; i <= 5; i++) {
@@ -1892,244 +1359,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
   //End 45-018
 
-
-
-    // Start 45-035
-    //-------------------------------------
-
-    // for (var i = 0; i <= 4; i++) {
-    //     {
-
-    //         var col1 = Number(values["CAP2_R21" + (i <= 4 ? ('0' + i) : i) + "_C2"]);
-    //         var col2 = Number(values["CAP2_R21" + (i <= 4 ? ('0' + i) : i) + "_C4"]);
-
-    //         if ((col1 == 0 && col2 != 0)) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R21' + (i <= 4 ? ('0' + i) : i) + '_C2',
-    //                 'weight': 62,
-    //                 'msg': Drupal.t('Cod eroare: 45-035 Cap.II daca COL2 = 0 atunci COL4 = 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-    // for (var i = 0; i <= 6; i++) {
-    //     {
-
-    //         var col1 = Number(values["CAP2_R21" + (i <= 6 ? ('1' + i) : i) + "_C2"]);
-    //         var col2 = Number(values["CAP2_R21" + (i <= 6 ? ('1' + i) : i) + "_C4"]);
-
-    //         if ((col1 == 0 && col2 != 0)) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R21' + (i <= 6 ? ('1' + i) : i) + '_C2',
-    //                 'weight': 63,
-    //                 'msg': Drupal.t('Cod eroare: 45-035 Cap.II daca COL2 = 0 atunci COL4 = 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // for (var i = 0; i <= 1; i++) {
-    //     {
-
-    //         var col1 = Number(values["CAP2_R21" + (i <= 1 ? ('2' + i) : i) + "_C2"]);
-    //         var col2 = Number(values["CAP2_R21" + (i <= 1 ? ('2' + i) : i) + "_C4"]);
-
-    //         if ((col1 == 0 && col2 != 0)) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R21' + (i <= 1 ? ('2' + i) : i) + '_C2',
-    //                 'weight': 64,
-    //                 'msg': Drupal.t('Cod eroare: 45-035 Cap.II daca COL2 = 0 atunci COL4 = 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-
-    // for (var i = 0; i <= 9; i++) {
-    //     {
-
-    //         var col1 = Number(values["CAP2_R22" + (i <= 9 ? ('0' + i) : i) + "_C2"]);
-    //         var col2 = Number(values["CAP2_R22" + (i <= 9 ? ('0' + i) : i) + "_C4"]);
-
-    //         if ((col1 == 0 && col2 != 0)) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R22' + (i <= 9 ? ('0' + i) : i) + '_C2',
-    //                 'weight': 65,
-    //                 'msg': Drupal.t('Cod eroare: 45-035 Cap.II daca COL2 = 0 atunci COL4 = 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    // for (var i = 0; i <= 2; i++) {
-    //     {
-
-    //         var col1 = Number(values["CAP2_R23" + (i <= 2 ? ('0' + i) : i) + "_C2"]);
-    //         var col2 = Number(values["CAP2_R23" + (i <= 2 ? ('0' + i) : i) + "_C4"]);
-
-    //         if ((col1 == 0 && col2 != 0)) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP2_R23' + (i <= 2 ? ('0' + i) : i) + '_C2',
-    //                 'weight': 66,
-    //                 'msg': Drupal.t('Cod eroare: 45-035 Cap.II daca COL2 = 0 atunci COL4 = 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    //-------------------------------------
-    // End 45-035
-
-
-
-    //----------------------------------------------------------
-
-    // Start 45-045
-
-    // for (var i = 3; i < 8; i++) {
-    //     {
-    //         var col1 = Number(values["CAP1_R11" + (i < 8 ? ('0' + i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP1_R11" + (i < 8 ? ('0' + i) : i) + "_C4"]);
-
-    //         if (col1 > 0 && col2 <= 0) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R11' + (i < 8 ? ('0' + i) : i) + '_C3',
-    //                 'weight': 67,
-    //                 'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    // for (var i = 0; i < 9; i++) {
-    //     {
-    //         var col1 = Number(values["CAP1_R11" + (i < 9 ? ('1' + i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP1_R11" + (i < 9 ? ('1' + i) : i) + "_C4"]);
-
-    //         if (col1 > 0 && col2 <= 0) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R11' + (i < 9 ? ('1' + i) : i) + '_C3',
-    //                 'weight': 68,
-    //                 'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // for (var i = 0; i < 9; i++) {
-    //     {
-    //         var col1 = Number(values["CAP1_R11" + (i < 9 ? ('2' + i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP1_R11" + (i < 9 ? ('2' + i) : i) + "_C4"]);
-
-    //         if (col1 > 0 && col2 <= 0) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R11' + (i < 9 ? ('2' + i) : i) + '_C3',
-    //                 'weight': 69,
-    //                 'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // for (var i = 3; i < 7; i++) {
-    //     {
-    //         var col1 = Number(values["CAP1_R11" + (i < 7 ? ('3' + i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP1_R11" + (i < 7 ? ('3' + i) : i) + "_C4"]);
-
-    //         if (col1 > 0 && col2 <= 0) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R11' + (i < 7 ? ('3' + i) : i) + '_C3',
-    //                 'weight': 70,
-    //                 'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // for (var i = 0; i < 1; i++) {
-    //     {
-    //         var col1 = Number(values["CAP1_R11" + (i < 1 ? ('4' + i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP1_R11" + (i < 1 ? ('4' + i) : i) + "_C4"]);
-
-    //         if (col1 > 0 && col2 <= 0) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R11' + (i < 1 ? ('4' + i) : i) + '_C3',
-    //                 'weight': 71,
-    //                 'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-
-    // for (var i = 3; i <= 9; i++) {
-    //     {
-    //         var col1 = Number(values["CAP1_R12" + (i <= 9 ? ('1' + i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP1_R12" + (i <= 9 ? ('1' + i) : i) + "_C4"]);
-
-    //         if (col1 > 0 && col2 <= 0) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R12' + (i <= 9 ? ('1' + i) : i) + '_C3',
-    //                 'weight': 72,
-    //                 'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-
-    // for (var i = 4; i <= 5; i++) {
-    //     {
-    //         var col1 = Number(values["CAP1_R12" + (i <= 5 ? ('2' + i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP1_R12" + (i <= 5 ? ('2' + i) : i) + "_C4"]);
-
-    //         if (col1 > 0 && col2 <= 0) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R12' + (i <= 5 ? ('2' + i) : i) + '_C3',
-    //                 'weight': 73,
-    //                 'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // for (var i = 2; i <= 3; i++) {
-    //     {
-    //         var col1 = Number(values["CAP1_R12" + (i <= 5 ? ('4' + i) : i) + "_C3"]);
-    //         var col2 = Number(values["CAP1_R12" + (i <= 5 ? ('4' + i) : i) + "_C4"]);
-
-    //         if (col1 > 0 && col2 <= 0) {
-    //             webform.errors.push({
-    //                 'fieldName': 'CAP1_R12' + (i <= 5 ? ('4' + i) : i) + '_C3',
-    //                 'weight': 74,
-    //                 'msg': Drupal.t('Cod eroare: Daca COL3 > 0 atunci COL4 > 0 ')
-    //             });
-    //         }
-    //     }
-    // }
-
-
-    // End 45-045
-    //---------------------------------------------------------
-
-    //Start 45-015 
+ //Start 45-015 
 
     if (!isNaN(Number(values.CAP1_R1328_C1))) {
         var R1328_015 = Number(values.CAP1_R1328_C1);
