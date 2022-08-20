@@ -1255,6 +1255,49 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
     //End 45 - 024
 
+
+    //Stat 45 - 025
+
+
+    for (var i = 1; i <= 2; i++) {
+        if (!isNaN(Number(values["CAP1A_R1701_C" + i]))) {
+            var R1701 = Number(values["CAP1A_R1701_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP1A_R1702_C" + i] || 0)
+            .plus(values["CAP1A_R1703_C" + i] || 0)
+            .plus(values["CAP1A_R1704_C" + i] || 0)
+           
+
+
+        )) {
+
+            var SUM_45_025 = Decimal(values["CAP1A_R1702_C" + i] || 0)
+                .plus(values["CAP1A_R1703_C" + i] || 0)
+                .plus(values["CAP1A_R1704_C" + i] || 0)
+               
+
+
+                ;
+        }
+
+
+        if (R1701 < SUM_45_025) {
+            webform.errors.push({
+                'fieldName': 'CAP1A_R1701_C' + i,
+                'weight': 25,
+                'msg': Drupal.t('Cod eroare: 45-025. [@R1701] - Rind.(1701)>=Rind.(1702+1703+1704)  pe coloana  @col  -  [@SUM_45_025]', { '@col': i, '@R1701': R1701, '@SUM_45_025': SUM_45_025 })
+            });
+        }
+    }
+
+
+
+    //End 45 - 025
+
+
+
     // 45 - 007
 
 
