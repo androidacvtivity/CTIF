@@ -1298,6 +1298,50 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
+
+
+
+
+    //Stat 45 - 026
+
+
+    for (var i = 1; i <= 4; i++) {
+        if (!isNaN(Number(values["CAP2_R2100_C" + i]))) {
+            var R2100 = Number(values["CAP2_R2100_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP2_R2101_C" + i] || 0)
+            .plus(values["CAP2_R2102_C" + i] || 0)
+            .plus(values["CAP2_R2103_C" + i] || 0)
+            .plus(values["CAP2_R2104_C" + i] || 0)
+
+
+
+        )) {
+
+            var SUM_45_026 = Decimal(values["CAP2_R2101_C" + i] || 0)
+                .plus(values["CAP2_R2102_C" + i] || 0)
+                .plus(values["CAP2_R2103_C" + i] || 0)
+                .plus(values["CAP2_R2104_C" + i] || 0)
+
+
+                ;
+        }
+
+
+        if (R2100 != SUM_45_026) {
+            webform.errors.push({
+                'fieldName': 'CAP2_R2100_C' + i,
+                'weight': 25,
+                'msg': Drupal.t('Cod eroare: 45-026. [@R2100] - Rind.(2100)=Rind.(2101+2102+2103+2104)  pe coloana  @col  -  [@SUM_45_026]', { '@col': i, '@R2100': R2100, '@SUM_45_026': SUM_45_026 })
+            });
+        }
+    }
+
+
+ //End 45 - 026
+
     // 45 - 007
 
 
