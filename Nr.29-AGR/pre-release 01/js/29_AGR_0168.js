@@ -1286,7 +1286,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
         if (R1701 < SUM_45_025) {
             webform.errors.push({
                 'fieldName': 'CAP1A_R1701_C' + i,
-                'weight': 25,
+                'weight': 26,
                 'msg': Drupal.t('Cod eroare: 45-025. [@R1701] - Rind.(1701)>=Rind.(1702+1703+1704)  pe coloana  @col  -  [@SUM_45_025]', { '@col': i, '@R1701': R1701, '@SUM_45_025': SUM_45_025 })
             });
         }
@@ -1299,48 +1299,55 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-
-
-
-    //Stat 45 - 026
+    //Stat 45 - 027
 
 
     for (var i = 1; i <= 4; i++) {
-        if (!isNaN(Number(values["CAP2_R2100_C" + i]))) {
-            var R2100 = Number(values["CAP2_R2100_C" + i]);
+        if (!isNaN(Number(values["CAP2_R2110_C" + i]))) {
+            var R2110 = Number(values["CAP2_R2110_C" + i]);
         }
 
 
-        if (!isNaN(Decimal(values["CAP2_R2101_C" + i] || 0)
-            .plus(values["CAP2_R2102_C" + i] || 0)
-            .plus(values["CAP2_R2103_C" + i] || 0)
-            .plus(values["CAP2_R2104_C" + i] || 0)
+        if (!isNaN(Decimal(values["CAP2_R2111_C" + i] || 0)
+            .plus(values["CAP2_R2112_C" + i] || 0)
+            .plus(values["CAP2_R2113_C" + i] || 0)
+            .plus(values["CAP2_R2114_C" + i] || 0)
+            .plus(values["CAP2_R2115_C" + i] || 0)
+            .plus(values["CAP2_R2116_C" + i] || 0)
 
 
 
         )) {
 
-            var SUM_45_026 = Decimal(values["CAP2_R2101_C" + i] || 0)
-                .plus(values["CAP2_R2102_C" + i] || 0)
-                .plus(values["CAP2_R2103_C" + i] || 0)
-                .plus(values["CAP2_R2104_C" + i] || 0)
-
+            var SUM_45_027 = Decimal(values["CAP2_R2111_C" + i] || 0)
+                .plus(values["CAP2_R2112_C" + i] || 0)
+                .plus(values["CAP2_R2113_C" + i] || 0)
+                .plus(values["CAP2_R2114_C" + i] || 0)
+                .plus(values["CAP2_R2115_C" + i] || 0)
+                .plus(values["CAP2_R2116_C" + i] || 0)
 
                 ;
         }
 
 
-        if (R2100 != SUM_45_026) {
+        if (R2110 != SUM_45_027) {
             webform.errors.push({
-                'fieldName': 'CAP2_R2100_C' + i,
-                'weight': 25,
-                'msg': Drupal.t('Cod eroare: 45-026. [@R2100] - Rind.(2100)=Rind.(2101+2102+2103+2104)  pe coloana  @col  -  [@SUM_45_026]', { '@col': i, '@R2100': R2100, '@SUM_45_026': SUM_45_026 })
+                'fieldName': 'CAP2_R2110_C' + i,
+                'weight': 27,
+                'msg': Drupal.t('Cod eroare: 45-027. [@R2110] - Rind.(2110)=Rind.(2111+2112+2113+2114+2115+2116)  pe coloana  @col  -  [@SUM_45_027]', { '@col': i, '@R2110': R2110, '@SUM_45_027': SUM_45_027 })
             });
         }
     }
 
 
- //End 45 - 026
+ //End 45 - 027
+
+
+    
+    
+
+
+
 
     // 45 - 007
 
