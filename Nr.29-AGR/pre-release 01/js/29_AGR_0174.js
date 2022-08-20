@@ -819,6 +819,41 @@ webform.validators.agr29 = function (v, allowOverpass) {
  //End 45 - 027
     
 
+    //Start 45 - 028
+
+
+    for (var i = 1; i <= 4; i++) {
+        if (!isNaN(Number(values["CAP2_R2120_C" + i]))) {
+            var R2120 = Number(values["CAP2_R2120_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP2_R2121_C" + i] || 0)
+           
+
+
+
+        )) {
+
+            var SUM_45_028 = Decimal(values["CAP2_R2121_C" + i] || 0)
+                
+
+                ;
+        }
+
+
+        if (R2120 < SUM_45_028) {
+            webform.errors.push({
+                'fieldName': 'CAP2_R2120_C' + i,
+                'weight': 28,
+                'msg': Drupal.t('Cod eroare: 45-028. [@R2120] - Rind.(2120)>=Rind.(2121)  pe coloana  @col  -  [@SUM_45_028]', { '@col': i, '@R2120': R2120, '@SUM_45_028': SUM_45_028 })
+            });
+        }
+    }
+
+
+ //End 45 - 028
+
 
 
 
