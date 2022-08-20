@@ -111,29 +111,29 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-    // if (!isNaN(Number(values.CAP1_R1242_C3))) {
-    //     var R1242_C3 = Number(values.CAP1_R1242_C3);
-    // }
+    if (!isNaN(Number(values.CAP1_R1242_C3))) {
+        var R1242_C3 = Number(values.CAP1_R1242_C3);
+    }
 
-    // if (!isNaN(Number(values.CAP1_R1242_C4))) {
-    //     var R1242_C4 = Number(values.CAP1_R1242_C4);
-    // }
+    if (!isNaN(Number(values.CAP1_R1242_C4))) {
+        var R1242_C4 = Number(values.CAP1_R1242_C4);
+    }
 
-    // if (!isNaN(Number(values.CAP1_R1243_C1))) {
-    //     var R1243_C1 = Number(values.CAP1_R1243_C1);
-    // }
+    if (!isNaN(Number(values.CAP1_R1243_C1))) {
+        var R1243_C1 = Number(values.CAP1_R1243_C1);
+    }
 
-    // if (!isNaN(Number(values.CAP1_R1243_C2))) {
-    //     var R1243_C2 = Number(values.CAP1_R1243_C2);
-    // }
+    if (!isNaN(Number(values.CAP1_R1243_C2))) {
+        var R1243_C2 = Number(values.CAP1_R1243_C2);
+    }
 
-    // if (!isNaN(Number(values.CAP1_R1243_C3))) {
-    //     var R1243_C3 = Number(values.CAP1_R1243_C3);
-    // }
+    if (!isNaN(Number(values.CAP1_R1243_C3))) {
+        var R1243_C3 = Number(values.CAP1_R1243_C3);
+    }
 
-    // if (!isNaN(Number(values.CAP1_R1243_C4))) {
-    //     var R1243_C4 = Number(values.CAP1_R1243_C4);
-    // }
+    if (!isNaN(Number(values.CAP1_R1243_C4))) {
+        var R1243_C4 = Number(values.CAP1_R1243_C4);
+    }
 
 
     if (!isNaN(Number(values.CAP1_R1329_C3))) {
@@ -147,34 +147,34 @@ webform.validators.agr29 = function (v, allowOverpass) {
     }
 
 
-    // if (!isNaN(Number(values.CAP1_R1330_C5))) {
-    //     var R1330_C5 = Number(values.CAP1_R1330_C5);
-    // }
+    if (!isNaN(Number(values.CAP1_R1330_C5))) {
+        var R1330_C5 = Number(values.CAP1_R1330_C5);
+    }
 
 
 
-    // if (!isNaN(Number(values.CAP1_R1117_C3))) {
-    //     var R1117_C3 = Number(values.CAP1_R1117_C3);
-    // }
+    if (!isNaN(Number(values.CAP1_R1117_C3))) {
+        var R1117_C3 = Number(values.CAP1_R1117_C3);
+    }
 
-    // if (!isNaN(Number(values.CAP1_R1117_C4))) {
-    //     var R1117_C4 = Number(values.CAP1_R1117_C4);
-    // }
-
-
-
-    // if (!isNaN(Number(values.CAP1_R1119_C4))) {
-    //     var R1119_C4 = Number(values.CAP1_R1119_C4);
-    // }
+    if (!isNaN(Number(values.CAP1_R1117_C4))) {
+        var R1117_C4 = Number(values.CAP1_R1117_C4);
+    }
 
 
-    // if (!isNaN(Number(values.CAP1_R1440_C1))) {
-    //     var R1440_C1 = Number(values.CAP1_R1440_C1);
-    // }
 
-    // if (!isNaN(Number(values.CAP1_R1442_C1))) {
-    //     var R1442_C1 = Number(values.CAP1_R1442_C1);
-    // }
+    if (!isNaN(Number(values.CAP1_R1119_C4))) {
+        var R1119_C4 = Number(values.CAP1_R1119_C4);
+    }
+
+
+    if (!isNaN(Number(values.CAP1_R1440_C1))) {
+        var R1440_C1 = Number(values.CAP1_R1440_C1);
+    }
+
+    if (!isNaN(Number(values.CAP1_R1442_C1))) {
+        var R1442_C1 = Number(values.CAP1_R1442_C1);
+    }
 
     if (!isNaN(Number(values.CAP1_R1411_C1))) {
         var R1411_C1 = Number(values.CAP1_R1411_C1);
@@ -267,15 +267,15 @@ webform.validators.agr29 = function (v, allowOverpass) {
         var R1422_C1 = Number(values.CAP1_R1422_C1);
     }
 
+    var SUM_45_020 = R1419_C2 + R1420_C2 + R1421_C2 + R1422_C1
 
-
-    // if (R1418_C1 < (R1419_C2 + R1420_C2 + R1421_C2 + R1422_C1)) {
-    //     webform.errors.push({
-    //         'fieldName': 'CAP1_R1418_C1',
-    //         'weight': 7,
-    //         'msg': Drupal.t('Cod eroare: 45-020. Rind.(1418) COL1 >= Rind.( 1419 + 1420 + 1421) pe COL2 + Rind.1422 COL1')
-    //     });
-    // }
+    if (R1418_C1 < (SUM_45_020)) {
+        webform.errors.push({
+            'fieldName': 'CAP1_R1418_C1',
+            'weight': 23,
+            'msg': Drupal.t('Cod eroare: 45-020. [@R1418_C1]- Rind.(1418) COL1 >= Rind.(1419+1420+1421) pe COL2+ Rind.1422 COL1 - [@SUM_45_020] ', { "@R1418_C1": R1418_C1, "@SUM_45_020": SUM_45_020 })
+        });
+    }
 
 
 
