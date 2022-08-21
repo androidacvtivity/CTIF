@@ -1048,20 +1048,20 @@ webform.validators.agr29 = function (v, allowOverpass) {
         {
             if (row_45_031_CAP2(i)) {
 
-                if (!isNaN(Number(values["CAP2_R" + (i) + "_C2"]))) {
-                    var col1 = Number(values["CAP2_R" + (i) + "_C2"]);
+                if (!isNaN(Number(values["CAP1_R" + (i) + "_C3"]))) {
+                    var col1 = Number(values["CAP1_R" + (i) + "_C3"]);
                 }
 
-                if (!isNaN(Number(values["CAP2_R" + (i) + "_C4"]))) {
-                    var col2 = Number(values["CAP2_R" + (i) + "_C4"]);
+                if (!isNaN(Number(values["CAP1_R" + (i) + "_C4"]))) {
+                    var col2 = Number(values["CAP1_R" + (i) + "_C4"]);
                 }
 
 
                 if (col1 == 0 &&  col2 != 0 ) {
                     webform.errors.push({
-                        'fieldName': 'CAP2_R' + (i) + '_C2',
+                        'fieldName': 'CAP1_R' + (i) + '_C3',
                         'weight': 32,
-                        'msg': Drupal.t('Cod eroare: 45-035 [@col1]  - Dacă Cap.II daca COL2 = 0 atunci COL4 = 0  - [@col2]', { "@col1": col1, "@col2": col2 })
+                        'msg': Drupal.t('Cod eroare: 45-045 [@col1]  - Daca COL3 > 0 atunci COL4 > 0  - [@col2]', { "@col1": col1, "@col2": col2 })
                     });
                 }
 
@@ -1072,6 +1072,58 @@ webform.validators.agr29 = function (v, allowOverpass) {
     }
 
     //End 45 - 035
+
+    function row_45_045_CAP1(row) {
+        var i;
+        i = row;
+        if (
+
+            i == 1103 || i == 1104 || i == 1105 || i == 1106 || i == 1107 
+            || i == 1110 || i == 1112 || i == 1113 || i == 1115 || i == 1117 || i == 1119 
+            || i == 1120 || i == 1121 || i == 1122 || i == 1123 || i == 1124|| i == 1125 || i == 1126|| i == 1127 
+            || i == 1133 || i == 1134 || i == 1135 || i == 1136 
+            || i == 1140 
+          
+            || i == 1213 || i == 1216 || i == 1218 || i == 1219 
+            || i == 1224 || i == 1225 || i == 1242 || i == 1243
+            
+            
+
+        )
+            return true;
+
+    }
+    // Start 45 - 045
+
+
+    for (var i = 1103; i <= 1243; i++) {
+        {
+            if (row_45_045_CAP1(i)) {
+
+                if (!isNaN(Number(values["CAP1_R" + (i) + "_C3"]))) {
+                    var col1 = Number(values["CAP1_R" + (i) + "_C3"]);
+                }
+
+                if (!isNaN(Number(values["CAP1_R" + (i) + "_C4"]))) {
+                    var col2 = Number(values["CAP1_R" + (i) + "_C4"]);
+                }
+
+
+                if (col1 > 0 &&  col2 == 0) {
+                    webform.errors.push({
+                        'fieldName': 'CAP1_R' + (i) + '_C3',
+                        'weight': 45,
+                        'msg': Drupal.t('Cod eroare: 45-045 [@col1]  -  Daca COL3 > 0 atunci COL4 > 0  - [@col2]', { "@col1": col1, "@col2": col2 })
+                    });
+                }
+
+
+            }
+
+        }
+    }
+
+    //End 45 - 045
 
 
     // 45 - 007
@@ -1101,7 +1153,33 @@ webform.validators.agr29 = function (v, allowOverpass) {
     // 45 - 007
 
 
+    //Start 45-036
 
+    for (var i = 1; i <= 1; i++) {
+
+
+        if (!isNaN(Number(values["CAP1_R1630_C" + i]))) {
+            var R1630_C = Number(values["CAP1_R1630_C" + i]);
+        }
+
+        if (!isNaN(Number(values["CAP1_R1631_C" + i]))) {
+            var R1631_C = Number(values["CAP1_R1631_C" + i]);
+        }
+
+
+        if (R1630_C < R1631_C) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1630_C' + i,
+                'weight': 36,
+                'msg': Drupal.t('Cod eroare: 45-036. [@R1630_C] - Rind.1630 >= Rind.1631  pe coloana. @col  -  [@R1631_C]', { '@col': i, '@R1630_C': R1630_C, '@R1631_C': R1631_C })
+            });
+        }
+    }
+
+    
+
+
+ //End 45 - 036
 
     //Start 45 - 008
 
