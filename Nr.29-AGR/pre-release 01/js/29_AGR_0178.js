@@ -912,6 +912,50 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
+
+
+
+
+
+
+    //Start 45 - 030
+
+
+    for (var i = 1; i <= 4; i++) {
+        if (!isNaN(Number(values["CAP2_R2300_C" + i]))) {
+            var R2300 = Number(values["CAP2_R2300_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP2_R2301_C" + i] || 0)
+            .plus(values["CAP2_R2302_C" + i] || 0)
+
+
+
+        )) {
+
+            var SUM_45_030 = Decimal(values["CAP2_R2301_C" + i] || 0)
+
+                .plus(values["CAP2_R2302_C" + i] || 0)
+                ;
+        }
+
+
+        if (R2300 < SUM_45_030) {
+            webform.errors.push({
+                'fieldName': 'CAP2_R2300_C' + i,
+                'weight': 28,
+                'msg': Drupal.t('Cod eroare: 45-030. [@R2300] - Rind.(2300)=Rind.(2301+2302)  pe coloana  @col  -  [@SUM_45_030]', { '@col': i, '@R2300': R2300, '@SUM_45_030': SUM_45_030 })
+            });
+        }
+    }
+
+
+ //End 45 - 030
+
+
+
+
     // 45 - 007
 
 
