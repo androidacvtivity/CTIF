@@ -1153,7 +1153,33 @@ webform.validators.agr29 = function (v, allowOverpass) {
     // 45 - 007
 
 
+    //Start 45-036
 
+    for (var i = 1; i <= 1; i++) {
+
+
+        if (!isNaN(Number(values["CAP1_R1630_C" + i]))) {
+            var R1630_C = Number(values["CAP1_R1630_C" + i]);
+        }
+
+        if (!isNaN(Number(values["CAP1_R1631_C" + i]))) {
+            var R1631_C = Number(values["CAP1_R1631_C" + i]);
+        }
+
+
+        if (R1630_C < R1631_C) {
+            webform.errors.push({
+                'fieldName': 'CAP1_R1630_C' + i,
+                'weight': 36,
+                'msg': Drupal.t('Cod eroare: 45-036. [@R1630_C] - Rind.1630 >= Rind.1631  pe coloana. @col  -  [@R1631_C]', { '@col': i, '@R1630_C': R1630_C, '@R1631_C': R1631_C })
+            });
+        }
+    }
+
+    
+
+
+ //End 45 - 036
 
     //Start 45 - 008
 
