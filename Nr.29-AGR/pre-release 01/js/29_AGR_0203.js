@@ -221,31 +221,31 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
-    // if (R1242_C3 < R1242_C4) {
-    //     webform.errors.push({
-    //         'fieldName': 'CAP1_R1242_C3',
-    //         'weight': 11,
-    //         'msg': Drupal.t('Cod eroare: 45-042. Rind.(1242) COL3 >= Rind.(1242) COL4')
-    //     });
-    // }
+    if (R1242_C3 < R1242_C4) {
+        webform.errors.push({
+            'fieldName': 'CAP1_R1242_C3',
+            'weight': 42,
+            'msg': Drupal.t('Cod eroare: 45-042. [@R1242_C3]- Rind.(1242) COL3 >= Rind.(1242) COL4 - [@R1242_C4] ', { "@R1242_C3": R1242_C3, "@R1242_C4": R1242_C4 })
+        });
+    }
 
 
-    // if (R1243_C1 < R1243_C2) {
-    //     webform.errors.push({
-    //         'fieldName': 'CAP1_R1243_C1',
-    //         'weight': 12,
-    //         'msg': Drupal.t('Cod eroare: 45-043. Rind.(1243) COL1 >= Rind.(1243) COL2')
-    //     });
-    // }
+    if (R1243_C1 < R1243_C2) {
+        webform.errors.push({
+            'fieldName': 'CAP1_R1243_C1',
+            'weight': 43,
+            'msg': Drupal.t('Cod eroare: 45-043. [@R1243_C1]- Rind.(1243) COL1 >= Rind.(1243) COL2 - [@R1243_C2] ', { "@R1243_C1": R1243_C1, "@R1243_C2": R1243_C2 })
+        });
+    }
 
 
-    // if (R1243_C3 < R1243_C4) {
-    //     webform.errors.push({
-    //         'fieldName': 'CAP1_R1243_C3',
-    //         'weight': 13,
-    //         'msg': Drupal.t('Cod eroare: 45-044. Rind.(1243) COL3 >=  Rind.(1243) COL4 ')
-    //     });
-    // }
+    if (R1243_C3 < R1243_C4) {
+        webform.errors.push({
+            'fieldName': 'CAP1_R1243_C3',
+            'weight': 44,
+            'msg': Drupal.t('Cod eroare:[@R1243_C3] -  45-044. Rind.(1243) COL3 >=  Rind.(1243) COL4 - [@R1243_C4]', { "@R1243_C3": R1243_C3, "@R1243_C4": R1243_C4 })
+        });
+    }
 
     var SUM_45_040 = R1631_C1 + R1501_C2 + R1502_C2 + R2100_C1 + R2110_C1 + R2120_C1 + R2200_C1 + R2300_C1
     if (R1630_C1 < (SUM_45_040)) {
@@ -1602,7 +1602,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
                 webform.errors.push({
                     'fieldName': 'CAP1_R1244_C' + i,
                     'weight': 18,
-                    'msg': Drupal.t('Cod eroare: 45-013. [@R1244_C] - Rind.(1244) = Rind.(1213+1214+1215+1216+1218+1221+1224+1225+1230+1232+1240+1243) @col  -  [@SUM_45_013]', { '@col': i, '@R1244_C': R1244_C, '@SUM_45_013': SUM_45_013 })
+                    'msg': Drupal.t('Cod eroare: 45-013. [@R1244_C] - Rind.(1244) = Rind.(1213+1214+1215+1216+1218+1221+1224+1225+1230+1232+1240+1243) pe coloana  @col  -  [@SUM_45_013]', { '@col': i, '@R1244_C': R1244_C, '@SUM_45_013': SUM_45_013 })
                 });
             }
         }
@@ -1805,47 +1805,9 @@ webform.validators.agr29 = function (v, allowOverpass) {
             'msg': Drupal.t('Cod eroare: 45-001. [@R1101_001] - Rind.1101=Rind.1102+1103+1224 pe COL1 - [@SUM_001] ', { "@R1101_001": R1101_001, "@SUM_001": SUM_001 })
         });
     }
+// //End 45-001
 
 
-
-
-    // //End 45-001
-
-
-
-
-    // //Start 45-024
-    // if (!isNaN(Number(values.CAP1_R1440_C1))) {
-    //     var R1440_024 = Number(values.CAP1_R1440_C1);
-    // }
-
-    // if (!isNaN(Number(values.CAP1_R1140_C1))) {
-    //     var R1140_024 = Number(values.CAP1_R1140_C1);
-    // }
-
-    // if (!isNaN(Number(values.CAP1_R1244_C1))) {
-    //     var R1244_024 = Number(values.CAP1_R1244_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1328_C1))) {
-    //     var R1328_024 = Number(values.CAP1_R1328_C1);
-    // }
-    // if (!isNaN(Number(values.CAP1_R1434_C1))) {
-    //     var R1434_024 = Number(values.CAP1_R1434_C1);
-    // }
-    // var SUM_024 = Math.round(R1140_024 + R1244_024 + R1328_024 + R1434_024)
-    // if (R1440_024 != SUM_024) {
-    //     webform.errors.push({
-    //         'fieldName': 'CAP1_R1440_C1',
-
-    //         'weight': 76,
-    //         'msg': Drupal.t('Cod eroare: 45-024. [@R1440_024] - Rind.(1440) = Rind.(1140+1244+1328+1434) pe COL1 - [@SUM_024] ', { "@R1440_024": R1440_024, "@SUM_024": SUM_024 })
-    //     });
-    // }
-
-
-
-
-    //  //End 45-024
 
 
     // Start 45-002
