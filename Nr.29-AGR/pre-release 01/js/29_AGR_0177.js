@@ -859,6 +859,59 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
 
 
+    //Start 45 - 029
+
+
+    for (var i = 1; i <= 4; i++) {
+        if (!isNaN(Number(values["CAP2_R2200_C" + i]))) {
+            var R2200 = Number(values["CAP2_R2200_C" + i]);
+        }
+
+
+        if (!isNaN(Decimal(values["CAP2_R2201_C" + i] || 0)
+            .plus(values["CAP2_R2202_C" + i] || 0)
+            .plus(values["CAP2_R2203_C" + i] || 0)
+            .plus(values["CAP2_R2204_C" + i] || 0)
+            .plus(values["CAP2_R2205_C" + i] || 0)
+            .plus(values["CAP2_R2206_C" + i] || 0)
+            .plus(values["CAP2_R2207_C" + i] || 0)
+            .plus(values["CAP2_R2208_C" + i] || 0)
+            .plus(values["CAP2_R2209_C" + i] || 0)
+
+
+
+        )) {
+
+            var SUM_45_029 = Decimal(values["CAP2_R2201_C" + i] || 0)
+                .plus(values["CAP2_R2202_C" + i] || 0)
+                .plus(values["CAP2_R2203_C" + i] || 0)
+                .plus(values["CAP2_R2204_C" + i] || 0)
+                .plus(values["CAP2_R2205_C" + i] || 0)
+                .plus(values["CAP2_R2206_C" + i] || 0)
+                .plus(values["CAP2_R2207_C" + i] || 0)
+                .plus(values["CAP2_R2208_C" + i] || 0)
+                .plus(values["CAP2_R2209_C" + i] || 0)
+
+
+                ;
+        }
+
+
+        if (R2200 != SUM_45_029) {
+            webform.errors.push({
+                'fieldName': 'CAP2_R2200_C' + i,
+                'weight': 29,
+                'msg': Drupal.t('Cod eroare: 45-029. [@R2200] - Rind.(2200)=Rind.(2201+2202+2203+2204+2205+2206+2207+2208+2209)  pe coloana  @col  -  [@SUM_45_029]', { '@col': i, '@R2200': R2200, '@SUM_45_029': SUM_45_029 })
+            });
+        }
+    }
+
+
+ //End 45 - 029
+
+
+
+
     // 45 - 007
 
 
