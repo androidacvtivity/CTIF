@@ -210,14 +210,14 @@ webform.validators.agr29 = function (v, allowOverpass) {
     }
 
 
-
-    // if (R1631_C1 < (R1440_C1 - R1442_C1)) {
-    //     webform.errors.push({
-    //         'fieldName': 'CAP1_R1631_C1',
-    //         'weight': 10,
-    //         'msg': Drupal.t('Cod eroare: 45-039. Rind.1631 col.1 >= rind.1440 - rind.1442 col.1')
-    //     });
-    // }
+    var SUM_45_039 = R1440_C1 - R1442_C1
+    if (R1631_C1 < (SUM_45_039)) {
+        webform.errors.push({
+            'fieldName': 'CAP1_R1631_C1',
+            'weight': 39,
+            'msg': Drupal.t('Cod eroare: 45-039. [@R1631_C1]- Rind.1631 col.1 >= rind.1440 - rind.1442 col.1 - [@SUM_45_039] ', { "@R1631_C1": R1631_C1, "@SUM_45_039": SUM_45_039 })
+        });
+    }
 
 
 
