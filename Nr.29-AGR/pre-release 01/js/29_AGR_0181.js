@@ -990,7 +990,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
                 if (col1 <  col2) {
                     webform.errors.push({
-                        'fieldName': 'CAP2_R' + (i) + '_C3',
+                        'fieldName': 'CAP2_R' + (i) + '_C1',
                         'weight': 31,
                         'msg': Drupal.t('Cod eroare: 45-031 [@col1]  - Rind.(2100 + … PÎNĂ LA  2302) COL1 >= Rind.(2100 + … PÎNĂ LA  2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
                     });
@@ -1005,6 +1005,73 @@ webform.validators.agr29 = function (v, allowOverpass) {
     //End 45 - 031
     
 
+
+
+    // Start 45 - 032
+    
+
+    for (var i = 2100; i <= 2302; i++) {
+        {
+            if (row_45_031_CAP2(i)) {
+
+                if (!isNaN(Number(values["CAP2_R" + (i) + "_C3"]))) {
+                    var col1 = Number(values["CAP2_R" + (i) + "_C3"]);
+                }
+
+                if (!isNaN(Number(values["CAP2_R" + (i) + "_C4"]))) {
+                    var col2 = Number(values["CAP2_R" + (i) + "_C4"]);
+                }
+
+
+                if (col1 < col2) {
+                    webform.errors.push({
+                        'fieldName': 'CAP2_R' + (i) + '_C3',
+                        'weight': 32,
+                        'msg': Drupal.t('Cod eroare: 45-032 [@col1]  - Rind.(2100 + … PÎNĂ LA  2302) COL3 >= Rind.(2100 + … PÎNĂ LA  2302) COL4  - [@col2]', { "@col1": col1, "@col2": col2 })
+                    });
+                }
+
+
+            }
+
+        }
+    }
+
+    //End 45 - 032
+
+
+
+    // Start 45 - 035
+
+
+    for (var i = 2100; i <= 2302; i++) {
+        {
+            if (row_45_031_CAP2(i)) {
+
+                if (!isNaN(Number(values["CAP2_R" + (i) + "_C2"]))) {
+                    var col1 = Number(values["CAP2_R" + (i) + "_C2"]);
+                }
+
+                if (!isNaN(Number(values["CAP2_R" + (i) + "_C4"]))) {
+                    var col2 = Number(values["CAP2_R" + (i) + "_C4"]);
+                }
+
+
+                if (col1 == 0 &&  col2 != 0 ) {
+                    webform.errors.push({
+                        'fieldName': 'CAP2_R' + (i) + '_C2',
+                        'weight': 32,
+                        'msg': Drupal.t('Cod eroare: 45-035 [@col1]  - Dacă Cap.II daca COL2 = 0 atunci COL4 = 0  - [@col2]', { "@col1": col1, "@col2": col2 })
+                    });
+                }
+
+
+            }
+
+        }
+    }
+
+    //End 45 - 035
 
 
     // 45 - 007
