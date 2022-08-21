@@ -944,7 +944,7 @@ webform.validators.agr29 = function (v, allowOverpass) {
         if (R2300 < SUM_45_030) {
             webform.errors.push({
                 'fieldName': 'CAP2_R2300_C' + i,
-                'weight': 28,
+                'weight': 30,
                 'msg': Drupal.t('Cod eroare: 45-030. [@R2300] - Rind.(2300)=Rind.(2301+2302)  pe coloana  @col  -  [@SUM_45_030]', { '@col': i, '@R2300': R2300, '@SUM_45_030': SUM_45_030 })
             });
         }
@@ -953,6 +953,57 @@ webform.validators.agr29 = function (v, allowOverpass) {
 
  //End 45 - 030
 
+
+
+
+
+
+    // Start 45 - 031
+    function row_45_031_CAP2(row) {
+        var i;
+        i = row;
+        if (
+
+
+            i == 2100 || i == 2101 || i == 2102 || i == 2103 || i == 2104 || i == 2110 
+            || i == 2111 || i == 2112 || i == 2113 || i == 2114 || i == 2115 || i == 2116 || i == 2120
+            || i == 2121 || i == 2200 || i == 2201 || i == 2202 || i == 2203 || i == 2204 || i == 2205 || i == 2206
+            || i == 2207 || i == 2208 || i == 2209 || i == 2300 || i == 2301 || i == 2302  
+
+        )
+            return true;
+
+    }
+
+    for (var i = 2100; i <= 2302; i++) {
+        {
+            if (row_45_031_CAP2(i)) {
+
+                if (!isNaN(Number(values["CAP2_R" + (i) + "_C1"]))) {
+                    var col1 = Number(values["CAP2_R" + (i) + "_C1"]);
+                }
+
+                if (!isNaN(Number(values["CAP2_R" + (i) + "_C2"]))) {
+                    var col2 = Number(values["CAP2_R" + (i) + "_C2"]);
+                }
+
+
+                if (col1 <  col2) {
+                    webform.errors.push({
+                        'fieldName': 'CAP2_R' + (i) + '_C3',
+                        'weight': 31,
+                        'msg': Drupal.t('Cod eroare: 45-031 [@col1]  - Rind.(2100 + … PÎNĂ LA  2302) COL1 >= Rind.(2100 + … PÎNĂ LA  2302) COL2  - [@col2]', { "@col1": col1, "@col2": col2 })
+                    });
+                }
+
+
+            }
+
+        }
+    }
+
+    //End 45 - 031
+    
 
 
 
