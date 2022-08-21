@@ -247,6 +247,14 @@ webform.validators.agr29 = function (v, allowOverpass) {
     //     });
     // }
 
+    var SUM_45_040 = R1631_C1 + R1501_C2 + R1502_C2 + R2100_C1 + R2110_C1 + R2120_C1 + R2200_C1 + R2300_C1
+    if (R1630_C1 < (SUM_45_040)) {
+        webform.errors.push({
+            'fieldName': 'CAP1_R1630_C1',
+            'weight': 40,
+            'msg': Drupal.t('Cod eroare: 45-040. [@R1630_C1]- Rind.1630 col.1 >= rind.1631 col.1 + rind.(1501+1502) col.2 + rind.(2100+2110+2120+2200+2300) col.1 - [@SUM_45_040] ', { "@R1630_C1": R1630_C1, "@SUM_45_040": SUM_45_040 })
+        });
+    }
     if (R1329_C3 != R1701_C2) {
         webform.errors.push({
             'fieldName': 'CAP1_R1329_C3',
